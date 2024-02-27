@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+pdfplumber
+pytesseract
+PyPDF2
+mysql-connector-python
+pdf2image
