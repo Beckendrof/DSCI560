@@ -1,6 +1,6 @@
 from extract import *
-from upload import *
-from webscraper import *
+# from upload import *
+# from webscraper import *
 import pandas as pd
 import os
 
