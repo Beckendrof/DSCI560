@@ -1,4 +1,6 @@
 from extract import *
+from upload import *
+from webscraper import *
 import pandas as pd
 import os
 
@@ -24,22 +26,48 @@ regex_patterns = {
 
 input_folder = "well_data" #Point to your folder directory containing all the pdfs
 output_folder = "well_data_txt"
+csv_file = "well_info.csv"
 
 data_list = []
 
-for filename in os.listdir(output_folder):
-    file_path = os.path.join(output_folder, filename)   
-    if os.path.isfile(file_path):
-        output_file_path = os.path.join(output_folder, f"{filename.split('.')[0]}_processed.csv")
-        if os.path.exists(output_file_path):
-            print(f"Skipping file {filename} as it has already been processed.")
-            continue
-        print(f"Processing file: {file_path}")       
-        with open(file_path, 'r', encoding='utf-8') as file:
-            file_content = file.read()
-            extracted_data = parse_extracted_text(file_content, regex_patterns)
-            extracted_data['file_name'] = filename.split(".")[0]
-            data_list.append(extracted_data)
+while True:
+    if os.path.isfile(csv_file): #Commented out for part one. Run individual files.
+        # print("Uploading extracted data to database...")
+        # upload() 
+        # print("Scrapping data from web...")
+        # scrape()
+        # print("Done.")
+        break
+    else:
+        for filename in os.listdir(input_folder): 
+            file = filename.split(".")[0]
+            input_file_path = os.path.join(input_folder, filename) 
+            output_file_path = os.path.join(output_folder, f"{file}.txt")
+            if os.path.isfile(input_file_path):
+                if os.path.exists(output_file_path):
+                    print(f"Skipping file {filename} as text extraction is complete.")
+                    continue
+                else:
+                    print(f"Extracting Text from {filename}")
+                    extracted_text = extract_text_from_pdf(input_file_path)
+                    if not extracted_text.strip():
+                        print("Using OCR to extract data...")
+                        extracted_text = ocr_pdf(input_file_path)
+                    base_filename = os.path.splitext(os.path.basename(input_file_path))[0]
+                    if not os.path.exists(output_folder):
+                        os.makedirs(output_folder)
+                    with open(output_file_path, 'w', encoding='utf-8') as output_file:
+                        output_file.write(extracted_text)  
+                    print("Done")
 
-df = pd.DataFrame(data_list)
-df.to_csv("well_info.csv")
+        for filename in os.listdir(output_folder): 
+            file_path = os.path.join(output_folder, filename)
+            with open(file_path, 'r', encoding='utf-8') as file:
+                print(f"Processing {filename}")
+                file_content = file.read()
+                extracted_data = parse_extracted_text(file_content, regex_patterns)
+                extracted_data['file_name'] = filename.split(".")[0]
+                data_list.append(extracted_data)    
+
+        df = pd.DataFrame(data_list)
+        df.to_csv("well_info.csv")
