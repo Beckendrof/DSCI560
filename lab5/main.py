@@ -31,7 +31,7 @@ csv_file = "well_info.csv"
 data_list = []
 
 while True:
-    if os.path.isfile(csv_file): #Commented out for part one. Run individual files.
+    if os.path.isfile(csv_file): #Commented out for part one. Run individual files in the order mentioned in README
         # print("Uploading extracted data to database...")
         # upload() 
         # print("Scrapping data from web...")
