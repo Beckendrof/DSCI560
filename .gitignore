@@ -1,6 +1,9 @@
 /lab1
-/lab2
+/lab2/*.mp4
+/lab2/*.mov
+/lab1/*.pages
 /readings
+/lab5/*.pages
 /lab5/__pycache__
 /test
 /lab5/well_data
