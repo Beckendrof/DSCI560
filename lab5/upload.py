@@ -18,7 +18,15 @@ def connect_to_mysql():
         print(f"Error connecting to MySQL database: {e}")
         return None
 
-
+def drop_table(connection):
+    print("Checking if table exists...")
+    try:
+        cursor = connection.cursor()
+        cursor.execute("DROP TABLE IF EXISTS data")
+        connection.commit()
+        print("Table dropped.")
+    except mysql.connector.Error as e:
+        print(f"Table does not exist.")
 
 def create_table(connection):
     try:
@@ -29,7 +37,7 @@ def create_table(connection):
                        "longitude VARCHAR(255),"
                        "latitude VARCHAR(255),"
                        "well_name VARCHAR(255),"
-                       "date_stimulated DATE,"
+                       "date_stimulated VARCHAR(255),"
                        "stimulated_formation VARCHAR(255),"
                        "top_ft VARCHAR(255),"
                        "bottom_ft VARCHAR(255),"
@@ -40,8 +48,14 @@ def create_table(connection):
                        "type_treatment VARCHAR(10000),"
                        "lbs_proppant VARCHAR(255),"
                        "max_treatment_pressure VARCHAR(255),"
-                       "max_treatment_rate VARCHAR(255))"
-                       
+                       "max_treatment_rate VARCHAR(255),"
+                       "ClosestCity VARCHAR(255),"
+                       "WellType VARCHAR(255),"
+                       "WellStatus VARCHAR(255),"
+                       "OilProduced VARCHAR(255),"
+                       "GasProduced VARCHAR(255),"
+                       "Operator VARCHAR(255),"
+                       "Location VARCHAR(255))"
                        )
 
         connection.commit()
@@ -59,10 +73,11 @@ def insert_data(connection, df):
             if pd.notna(row['well_name']) or pd.notna(row['api']):
                 # Handle date format conversion
                 date_stimulated = None
-                if pd.notna(row['date_stimulated']):
-                    date_stimulated = datetime.strptime(row['date_stimulated'], '%m/%d/%Y').strftime('%Y-%m-%d')
+                # if pd.notna(row['date_stimulated']):
+                #     date_stimulated = datetime.strptime(row['date_stimulated'], '%Y-%m-%d').strftime('%Y-%m-%d')
                 
                 # Handle NaN values by checking each column individually
+                date_stimulated = row['date_stimulated']
                 api = row['api'] if pd.notna(row['api']) else None
                 longitude = row['longitude'] if pd.notna(row['longitude']) else 'No Value Found'
                 latitude = row['latitude'] if pd.notna(row['latitude']) else 'No Value Found'
@@ -78,7 +93,7 @@ def insert_data(connection, df):
                 lbs_proppant = row['lbs_proppant'] if pd.notna(row['lbs_proppant']) else 'No Value Found'
                 max_treatment_pressure = row['max_treatment_pressure'] if pd.notna(row['max_treatment_pressure']) else 'No Value Found'
                 max_treatment_rate = row['max_treatment_rate'] if pd.notna(row['max_treatment_rate']) else 'No Value Found'
-                well_number = row['file_name'] if pd.notna(row['file_name']) else 'No Value Found'
+                well_number = row['well_number'] if pd.notna(row['well_number']) else 'No Value Found'
                 
                 
                 api = None if pd.isna(api) else api
@@ -98,14 +113,23 @@ def insert_data(connection, df):
                 max_treatment_rate = None if pd.isna(max_treatment_rate) else max_treatment_rate
                 well_number = None if pd.isna(well_number) else well_number
 
-                cursor.execute("INSERT INTO data (well_number,api, longitude, latitude, well_name, date_stimulated, "
-                               "stimulated_formation, top_ft, bottom_ft, stimulation_stages, volume,volume_units, "
-                               "acid_percent, type_treatment,lbs_proppant, max_treatment_pressure, max_treatment_rate) "
-                               "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,%s)",
-                               (well_number,api, longitude, latitude, well_name, date_stimulated,
+                cursor.execute("INSERT INTO data (well_number, api, longitude, latitude, well_name, date_stimulated, "
+                            "stimulated_formation, top_ft, bottom_ft, stimulation_stages, volume, volume_units, "
+                            "acid_percent, type_treatment, lbs_proppant, max_treatment_pressure, max_treatment_rate, "
+                            "ClosestCity, WellType, WellStatus, OilProduced, GasProduced, Operator, Location) "
+                            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                            (well_number, api, longitude, latitude, well_name, date_stimulated,
                                 stimulated_formation, top_ft, bottom_ft, stimulation_stages,
-                                volume,volume_units, acid_percent,type_treatment, lbs_proppant,
-                                max_treatment_pressure, max_treatment_rate))
+                                volume, volume_units, acid_percent, type_treatment, lbs_proppant,
+                                max_treatment_pressure, max_treatment_rate,
+                                row['ClosestCity'] if pd.notna(row['ClosestCity']) else 'No Value Found',
+                                row['WellType'] if pd.notna(row['WellType']) else 'No Value Found',
+                                row['WellStatus'] if pd.notna(row['WellStatus']) else 'No Value Found',
+                                row['OilProduced'] if pd.notna(row['OilProduced']) else 'No Value Found',
+                                row['GasProduced'] if pd.notna(row['GasProduced']) else 'No Value Found',
+                                row['Operator'] if pd.notna(row['Operator']) else 'No Value Found',
+                                row['Location'] if pd.notna(row['Location']) else 'No Value Found'))
+
         connection.commit()
         print("Data inserted into MySQL table")
     except mysql.connector.Error as e:
@@ -127,13 +151,15 @@ def insert_data(connection, df):
 #         connection.close()
 
 if __name__ == "__main__":
-    df=pd.read_csv('well_info.csv')
+    df=pd.read_csv('data_table.csv')
     # Connect to MySQL
     connection = connect_to_mysql()
 
     if connection:
         # Create table if it doesn't exist
         create_table(connection)
+
+        # drop_table(connection)
 
         # Insert data into table
         insert_data(connection, df)

@@ -5,3 +5,6 @@ pytesseract
 PyPDF2
 mysql-connector-python
 pdf2image
+numpy
+pandas
+selenium

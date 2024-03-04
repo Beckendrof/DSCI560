@@ -1,0 +1,16 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "description": "ds560 lab5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "leaflet": "^1.9.4",
+    "mysql": "^2.18.1"
+  }
+}
