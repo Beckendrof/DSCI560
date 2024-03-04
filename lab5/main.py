@@ -74,7 +74,7 @@ while True:
         df = pd.DataFrame(data_list)
         df.to_csv("well_info.csv")
 
-node_command = "node server/server.js"  
+node_command = "npm start"  
 node_process = subprocess.Popen(node_command, shell=True)
 
 try:
