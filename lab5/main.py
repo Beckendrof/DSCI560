@@ -1,7 +1,9 @@
 from extract import *
-# from upload import *
-# from webscraper import *
+from upload import *
+from webscraper import *
 import pandas as pd
+import subprocess
+import time
 import os
 
 # Your defined regex patterns
@@ -31,12 +33,12 @@ csv_file = "well_info.csv"
 data_list = []
 
 while True:
-    if os.path.isfile(csv_file): #Commented out for part one. Run individual files in the order mentioned in README
-        # print("Uploading extracted data to database...")
-        # upload() 
-        # print("Scrapping data from web...")
-        # scrape()
-        # print("Done.")
+    if os.path.isfile(csv_file): 
+        print("Uploading extracted data to database...")
+        upload() 
+        print("Scrapping data from web...")
+        scrape()
+        print("Done.")
         break
     else:
         for filename in os.listdir(input_folder): 
@@ -71,3 +73,13 @@ while True:
 
         df = pd.DataFrame(data_list)
         df.to_csv("well_info.csv")
+
+node_command = "node server/server.js"  
+node_process = subprocess.Popen(node_command, shell=True)
+
+try:
+    while True:
+        time.sleep(1) 
+except KeyboardInterrupt:
+    node_process.terminate()
+    node_process.wait() 

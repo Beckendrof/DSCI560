@@ -2,7 +2,7 @@ well_number,api,longitude,latitude,well_name,date_stimulated,stimulated_formatio
 W28634,33-053-06019,103° 36' 10.110 W,48° 3' 41.950 N,Chalmers 5300 21-19 6B,2015-04-25,Bakken,11080.0,20580.0,36.0,223578.0,Barrels,,Sand Frac,3879492.0,9244.0,75.0,Williston,Oil & Gas,Active,"275
 Barrels of Oil Produced in Dec 2023","2.7 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",CHALMERS 5300 21-19 6B
-W20863,33-053-03608,103° 36' 41.780 W,48° 4' 57.940 N,FOLEY FEDERAL 43-12H,2015-04-25,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"125
+W20863,33-053-03608,103° 36' 41.780 W,48° 4' 57.940 N,FOLEY FEDERAL 43-12H,2015-04-25,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"125
 Barrels of Oil Produced in Dec 2023","64
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",FOLEY FEDERAL 5301 43-12H
 W23365,33-105-02725,103° 43' 46.650 W,48° 06' 33.65 N,Atlanta Federal 8-6H,2014-12-14,3 Forks,10865.0,22585.0,38.0,72511.0,Barrels,,Sand Frac,3764730.0,8557.0,23.0,Williston,Oil & Gas,Active,"439
@@ -14,10 +14,10 @@ MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","Williams County,
 W23359,33-105-02719,103° 43' 39.06 W,48° 06' 33.65 N,Atlanta 14-6H,2014-01-20,3 Forks,10924.0,19085.0,27.0,51087.0,Barrels,,Sand Frac,3009408.0,8352.0,28.0,Williston,Oil & Gas,Active,"280
 Barrels of Oil Produced in Dec 2023","547
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","Williams County, ND",ATLANTA 14-6H
-W15358,33-053-02556,W103  416.1923,48° 06' 44.88 N,Lewis & Clark 2-4H,2014-01-20,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"324
+W15358,33-053-02556,W103  416.1923,48° 06' 44.88 N,Lewis & Clark 2-4H,2014-01-20,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"324
 Barrels of Oil Produced in Dec 2023","323
 MCF of Gas Produced in Dec 2023","RIM OPERATING, INC.","McKenzie County, ND",LEWIS AND CLARK 2-4H
-W28754,33-053-00605,103° 36' 11.380 W,48° 04 ' 28.160 N,KLINE FEDERAL 5300 31-18 88,2014-01-20,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,Sand Frac,No Value Found,No Value Found,No Value Found,,,,,,,,
+W28754,33-053-00605,103° 36' 11.380 W,48° 04 ' 28.160 N,KLINE FEDERAL 5300 31-18 88,2014-01-20,N/A,N/A,N/A,N/A,N/A,Barrels,,Sand Frac,N/A,N/A,N/A,,,,,,,,
 W28755,33-053-06056,103° 36' 11.380 W,48° 04 ' 27.840 N,KLINE FEDERAL 5300 31-18 7T,2015-07-30,Three Forks,11068.0,19681.0,33.0,200534.0,Barrels,,Sand Frac,3873780.0,9488.0,71.0,Williston,Oil & Gas,Active,"149
 Barrels of Oil Produced in Dec 2023","1.1 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",KLINE FEDERAL 5300 31-18 7T
@@ -36,7 +36,7 @@ MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie Cou
 W28637,33-053-06022,103° 36' 10.11 W,48° 03 ' 40.65 N,Chalmers 5300 21-19 10T,2015-04-08,Three Forks,11118.0,20558.0,36.0,214367.0,Barrels,,Sand Frac,3828642.0,9063.0,75.0,Williston,Oil & Gas,Active,"576
 Barrels of Oil Produced in Dec 2023","6 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",CHALMERS 5300 21-19 10T
-W11920,,,,Corps of Engineers 31-10,2015-04-08,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"881
+W11920,,,,Corps of Engineers 31-10,2015-04-08,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"881
 Barrels of Oil Produced in Dec 2023","881
 MCF of Gas Produced in Dec 2023","RIM OPERATING, INC.","McKenzie County, ND",CORPS OF ENGINEERS 31-10
 W23372,33-105-02732,103° 43' 54.570 W,048° 6' 35.990 N,Atlanta 1-6H,2013-03-25,Middle Bakken,10888.0,19936.0,27.0,44056.0,Barrels,,Sand Frac,3134553.0,8147.0,31.0,Williston,Oil & Gas,Active,"947
@@ -45,7 +45,7 @@ MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","Williams County,
 W23366,33-105-02726,103° 43' 47.31 W,48°06 ' 33.66 N,Atlanta Federal 7-6H,2013-12-13,Middle Bakken,10821.0,23100.0,40.0,62806.0,Barrels,,Sand Frac,4810703.0,8461.0,28.0,Williston,Oil & Gas,Active,"1.3 k
 Barrels of Oil Produced in Dec 2023","1.7 k
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","Williams County, ND",ATLANTA FEDERAL 7-6H
-W22247,33-053-03943,103°37 ' 20.35 W,48°01 ' 30.33 N,MAGNUM 1-36-25H,2013-12-13,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"1.3 k
+W22247,33-053-03943,103°37 ' 20.35 W,48°01 ' 30.33 N,MAGNUM 1-36-25H,2013-12-13,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"1.3 k
 Barrels of Oil Produced in Dec 2023","1.7 k
 MCF of Gas Produced in Dec 2023","SLAWSON EXPLORATION COMPANY, INC.","McKenzie County, ND",MAGNUM 1-36-25H
 W28756,33-053-06057,103° 36' 11.380 W,48° 04 ' 27.510 N,Kline Federal 5300 31-18 6B,2015-07-13,Bakken,11108.0,20592.0,36.0,220489.0,Barrels,,Sand Frac,4243874.0,9096.0,71.0,Williston,Oil & Gas,Active,"54
@@ -75,7 +75,7 @@ MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie Cou
 W23362,33-105-02722,103°43'41.047 W,48°06'33.650 N,Atlanta 11-6H,2014-01-12,Middle Bakken,10896.0,19697.0,29.0,48847.0,Barrels,,Sand Frac,3069436.0,8094.0,30.0,Williston,Oil & Gas,Active,"731
 Barrels of Oil Produced in Dec 2023","1.1 k
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","Williams County, ND",ATLANTA 11-6H
-W20864,33-053-03911,103° 36' 43.250 W,348° 4' 57.960 N,BRAY  5301 43-12H,2014-01-12,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"1.1 k
+W20864,33-053-03911,103° 36' 43.250 W,348° 4' 57.960 N,BRAY  5301 43-12H,2014-01-12,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"1.1 k
 Barrels of Oil Produced in Dec 2023","598
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",YUKON 5301 41-12T
 W28425,33-053-05954,103° 36' 10.82 W,48° 2' 28.650 N,Wade Federal 5300 41-30 6B,2015-04-24,Bakken,10032.0,20425.0,50.0,188339.0,Barrels,,Sand Frac,9170249.0,9033.0,38.0,Williston,Oil & Gas,Active,"430
@@ -100,17 +100,17 @@ MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie Cou
 W23361,33-105-02721,103°43'40.384 W,48°06'33.649 N,Atlanta 12-6H,2014-01-12,3 Forks,10895.0,19500.0,29.0,53948.0,Barrels,,Sand Frac,3098438.0,8528.0,30.0,Williston,Oil & Gas,Active,"236
 Barrels of Oil Produced in Dec 2023","493
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","Williams County, ND",ATLANTA 12-6H
-W22731,33-053-04069,103° 36' 18.972 W,48° 1' 29.869 N,MAGNUM 3-36-25H,2014-01-12,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,,,,,,,,
+W22731,33-053-04069,103° 36' 18.972 W,48° 1' 29.869 N,MAGNUM 3-36-25H,2014-01-12,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,,,,,,,,
 W25159,33-053-04855,103°40'11.343W,48°04'31.258N,Columbus Federal 2-16H,2014-02-27,Three Forks,10850.0,23475.0,43.0,85599.0,Barrels,,Sand Frac,3937842.0,8493.0,31.0,Williston,Oil & Gas,Active,"906
 Barrels of Oil Produced in Dec 2023","1.6 k
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","McKenzie County, ND",COLUMBUS FEDERAL 2-16H
-W20197,33-053-03413,103°  36' 11.540 W,48°  2' 49.420 N,Wade Federal 5300 21-30H,2014-02-27,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,,,,,,,,
+W20197,33-053-03413,103°  36' 11.540 W,48°  2' 49.420 N,Wade Federal 5300 21-30H,2014-02-27,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,,,,,,,,
 W25158,33-053-04854,103°40'11.681W,48°04'30.876N,Tallahassee 2-16H,2014-03-14,Bakken,11080.0,18127.0,24.0,56607.0,Barrels,,Sand Frac,3013084.0,7518.0,30.0,Williston,Oil & Gas,Active,"944
 Barrels of Oil Produced in Dec 2023","1.5 k
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","McKenzie County, ND",TALLAHASSEE 2-16H
-W90244,33-053-90244,103° 35' 58.470 W,48° 1' 44.700 N,Buck Shot SWD 5300 31-31,2013-07-20,Dakota,5625.0,6150.0,8.0,9000.0,Gallons,100.0,Acid,No Value Found,No Value Found,No Value Found,,,,,,,,
+W90244,33-053-90244,103° 35' 58.470 W,48° 1' 44.700 N,Buck Shot SWD 5300 31-31,2013-07-20,Dakota,5625.0,6150.0,8.0,9000.0,Gallons,100.0,Acid,N/A,N/A,N/A,,,,,,,,
 W28654,33-053-06028,103° 36' 11.950 W,48° 4' 7.220 N,Kline Federal 5300 41-18 13T2X,2015-06-09,Three Forks Second Bench,11185.0,20754.0,50.0,126978.0,Barrels,,Sand Frac,4230380.0,9122.0,39.0,,,,,,,,
-W36047,33-053-08946,103° 36' 11.190 W,48° 2' 8.330 N,Lewis Federal 5300 11-31 4BR,2015-06-09,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,Sand Frac,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"1.8 k
+W36047,33-053-08946,103° 36' 11.190 W,48° 2' 8.330 N,Lewis Federal 5300 11-31 4BR,2015-06-09,N/A,N/A,N/A,N/A,N/A,Barrels,,Sand Frac,N/A,N/A,N/A,Williston,Oil & Gas,Active,"1.8 k
 Barrels of Oil Produced in Dec 2023","2.4 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",LEWIS FEDERAL 5300 11-31 4BR
 W28655,33-053-06029,103° 36' 11.950 W,48° 4' 6.900 N,Kline Federal 5300 41-18 14BX,2015-06-09,Bakken,11113.0,20645.0,50.0,214895.0,Barrels,,Sand Frac,9543260.0,9411.0,41.0,Williston,Oil & Gas,Active,"1.1 k
@@ -125,19 +125,19 @@ MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie Cou
 W25160,33-053-04856,103°40'11.004W,48°04'31.639N,Columbus Federal 3-16H,2014-03-02,Bakken,10968.0,23122.0,41.0,74589.0,Barrels,,Sand Frac,3788746.0,7979.0,31.0,Williston,Oil & Gas,Active,"676
 Barrels of Oil Produced in Dec 2023","746
 MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","McKenzie County, ND",COLUMBUS FEDERAL 3-16H
-W21266,33-053-03703,103° 38' 9.239 W,48°04'56.376N,DAHL 15-11H,2014-03-02,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"3.1 k
+W21266,33-053-03703,103° 38' 9.239 W,48°04'56.376N,DAHL 15-11H,2014-03-02,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"3.1 k
 Barrels of Oil Produced in Dec 2023","2.2 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",DAHL FEDERAL 15-11H
-W25571,33-053-04981,103° 36' 28.880 W,048° 4' 57.780 N,Colville 5301 44-12T,2013-09-11,Bakken,No Value Found,21090.0,36.0,95801.0,Barrels,,Sand Frac,3826701.0,9406.0,36.0,Williston,Oil & Gas,Active,"505
+W25571,33-053-04981,103° 36' 28.880 W,048° 4' 57.780 N,Colville 5301 44-12T,2013-09-11,Bakken,N/A,21090.0,36.0,95801.0,Barrels,,Sand Frac,3826701.0,9406.0,36.0,Williston,Oil & Gas,Active,"505
 Barrels of Oil Produced in Dec 2023","1.6 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",COLVILLE 5301 44-12T
-W90258,33-105-90258,103° 43' 54.570 W,048° 6' 35.990 N,Atlanta #1 SWD,2013-03-01,Dakota,5720.0,5760.0,1.0,6000.0,Gallons,15.0,Acid,No Value Found,2670.0,6.0,,,,,,,,
-W30789,33-053-06755,103° 36' 11.38 W,48° 04' 28.49 N,KLINE FEDERAL 5300 31-18 15T,2013-03-01,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,,,,,,,,
-W11745,33-053-02102,103° 36' 11.38 W,48° 05' 47.068 N,BASIC GAME & FISH 34-3,2013-03-01,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,,,,,,,,
+W90258,33-105-90258,103° 43' 54.570 W,048° 6' 35.990 N,Atlanta #1 SWD,2013-03-01,Dakota,5720.0,5760.0,1.0,6000.0,Gallons,15.0,Acid,N/A,2670.0,6.0,,,,,,,,
+W30789,33-053-06755,103° 36' 11.38 W,48° 04' 28.49 N,KLINE FEDERAL 5300 31-18 15T,2013-03-01,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,,,,,,,,
+W11745,33-053-02102,103° 36' 11.38 W,48° 05' 47.068 N,BASIC GAME & FISH 34-3,2013-03-01,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,,,,,,,,
 W28649,33-053-06024,103° 36' 10.11 W,48° 03 ' 40.32 N,Chalmers 5300 21-19 11B,2015-04-07,Bakken,11065.0,20675.0,36.0,209363.0,Barrels,,Sand Frac,3768710.0,9499.0,75.0,Williston,Oil & Gas,Active,"721
 Barrels of Oil Produced in Dec 2023","2.2 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",CHALMERS 5300 21-19 11B
-W20407,33-053-03472,103° 33' 43.112 W,48° 3' 26.444 N,Chalmers 5301 31-19H,2015-04-07,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,,,,,,,,
+W20407,33-053-03472,103° 33' 43.112 W,48° 3' 26.444 N,Chalmers 5301 31-19H,2015-04-07,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,,,,,,,,
 W28648,33-053-06023,103° 38' 10.110 W,48° 3' 40.970 N,CHALMERS 5300 21-19 9B,2015-04-27,Bakken,11080.0,20435.0,36.0,215116.0,Barrels,,Sand Frac,3817790.0,9426.0,75.0,Williston,Oil & Gas,Active,"409
 Barrels of Oil Produced in Dec 2023","2.5 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",CHALMERS 5300 21-19 9B
@@ -157,7 +157,7 @@ MCF of Gas Produced in Dec 2023","CONTINENTAL RESOURCES, INC.","McKenzie County,
 W28303,33-053-05906,103° 36' 09.79 W,48° 02 ' 38.97 N,Wade Federal 5300 31-30 11T,2015-03-29,Three Forks,11080.0,20453.0,36.0,123705.0,Barrels,,Sand Frac,3976880.0,8968.0,39.0,Williston,Oil & Gas,Active,"591
 Barrels of Oil Produced in Dec 2023","1.9 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",WADE FEDERAL 5300 31-30 11T
-W90329,33-053-90329,103° 36' 56.050 W,48° 3' 57.890 N,Carson SWD 5301 12-24,2015-03-29,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,,,,,,,,
+W90329,33-053-90329,103° 36' 56.050 W,48° 3' 57.890 N,Carson SWD 5301 12-24,2015-03-29,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,,,,,,,,
 W28601,33-053-06012,103° 36' 18.550 W,48° 3' 19.680 N,Chalmers Wade Federal 5301 44-2412TXR,2014-11-25,Three Forks,11418.0,21025.0,36.0,95600.0,Barrels,,Sand Frac,9370930.0,9044.0,37.2,Williston,Oil & Gas,Active,"366
 Barrels of Oil Produced in Dec 2023","382
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",CHALMERS WADE FEDERAL 5301 44-24 12TXR
@@ -186,6 +186,6 @@ MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie Cou
 W22249,33-053-03944,103° 36' 23.903 W,48° 3' 8.879 N,MAGNUM 2-36-25H,2012-11-14,Middle Bakken,11104.0,20705.0,32.0,22133.0,Barrels,,Sand Frac,1160090.0,8403.0,39.7,Williston,Oil & Gas,Active,"459
 Barrels of Oil Produced in Dec 2023","670
 MCF of Gas Produced in Dec 2023","SLAWSON EXPLORATION COMPANY, INC.","McKenzie County, ND",MAGNUM 2-36-25H
-W21796,33-053-03846,103° 39' 20.150 W,48° 4' 49.250 N,DAHL FEDERAL 2-15H,2012-11-14,No Value Found,No Value Found,No Value Found,No Value Found,No Value Found,Barrels,,No Value Found,No Value Found,No Value Found,No Value Found,Williston,Oil & Gas,Active,"1.8 k
+W21796,33-053-03846,103° 39' 20.150 W,48° 4' 49.250 N,DAHL FEDERAL 2-15H,2012-11-14,N/A,N/A,N/A,N/A,N/A,Barrels,,N/A,N/A,N/A,N/A,Williston,Oil & Gas,Active,"1.8 k
 Barrels of Oil Produced in Dec 2023","1.1 k
 MCF of Gas Produced in Dec 2023",OASIS PETROLEUM NORTH AMERICA LLC,"McKenzie County, ND",DAHL FEDERAL 2-15H

@@ -25,8 +25,6 @@ const db = mysql.createConnection({
 db.connect((err) => {
   if (err) {
     console.error('Error connecting to MySQL:', err);
-  } else {
-    console.log('Connected to MySQL');
   }
 });
 
@@ -71,5 +69,5 @@ app.get('/pins', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Web app is running at http://localhost:${port}`);
 });

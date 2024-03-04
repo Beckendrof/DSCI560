@@ -4,10 +4,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 fetch('/pins')
   .then(response => response.json())
   .then(pins => {
+    temp = 0
     pins.forEach(pin => {
-      console.log(pin)
+      temp+=1
       // Check if both latitude and longitude are present and valid
-      if (pin.latitude !== undefined && pin.longitude !== undefined) {
+      if (pin.latitude !== null && pin.longitude !== null) {
         coordinates = getCoordinates(pin.latitude, pin.longitude);
         latitude = coordinates.latitude
         longitude = coordinates.longitude
@@ -16,6 +17,7 @@ fetch('/pins')
           const marker = L.marker([latitude, longitude]).addTo(map);
           marker.bindPopup(`<b>${pin.well_number}</b><br>
           Well Name: ${pin.well_name}<br>
+          API: ${pin.api}<br>
           Date Stimulated: ${pin.date_stimulated}<br>
           Top (ft): ${pin.top_ft}<br>
           Bottom (ft): ${pin.bottom_ft}<br>
@@ -40,6 +42,7 @@ fetch('/pins')
         console.error(`Latitude or longitude missing for pin with title: ${pin.title}`);
       }
     });
+    console.log(`${temp} wells plotted`)
   })
   .catch(error => console.error('Error fetching pins:', error));
 

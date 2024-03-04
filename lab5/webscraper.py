@@ -27,17 +27,16 @@ def add_columns_to_data_table(cursor, db):
             ADD COLUMN OilProduced VARCHAR(255),
             ADD COLUMN GasProduced VARCHAR(255),
             ADD COLUMN Operator VARCHAR(255),
-            ADD COLUMN Location VARCHAR(255)
+            ADD COLUMN Location VARCHAR(255),
+            ADD COLUMN wellname VARCHAR(255)
         """)
         db.commit()
         print("New columns added to data table successfully.")
     except mysql.connector.Error as err:
         print("Error adding new columns to data table:", err)
-# Add new columns to the data table if not already added
-
 
 # Function to insert retrieved data into data table
-def insert_into_data_table(cursor, db, closest_city, well_type, well_status, oil_produced, gas_produced,Operator,Location):
+def insert_into_data_table(cursor, db, closest_city, well_type, well_status, oil_produced, gas_produced, Operator, Location, wellname, well_number):
     try:
         cursor.execute("""
             UPDATE data 
@@ -46,17 +45,18 @@ def insert_into_data_table(cursor, db, closest_city, well_type, well_status, oil
                 WellStatus = %s, 
                 OilProduced = %s, 
                 GasProduced = %s,
-                Operator=%s,
-                Location=%s
-        """, (closest_city, well_type, well_status, oil_produced, gas_produced,Operator,Location))
+                Operator = %s,
+                Location = %s,
+                wellname = %s
+            WHERE well_number = %s
+        """, (closest_city, well_type, well_status, oil_produced, gas_produced, Operator, Location, wellname, well_number))
         db.commit()
-        print("Data inserted successfully into data table.")
+        # print("Data inserted successfully into data table.")
     except mysql.connector.Error as err:
         print("Error inserting data into data table:", err)
 
-
 # Function to search for well information on the website and insert into oil_wells table
-def search_and_insert_well_info(cursor, db, api_number=None, well_name=None):
+def search_and_insert_well_info(cursor, db, api_number=None, well_name=None, well_number=None):
     try:
         # Check if at least one of api_number or well_name is provided
         if api_number or well_name:
@@ -64,9 +64,12 @@ def search_and_insert_well_info(cursor, db, api_number=None, well_name=None):
             driver.get("https://www.drillingedge.com/search")
             
             # Find the input fields for well name and API number
-            well_name_input = driver.find_element(By.CSS_SELECTOR, "input[name='well_name']")
-            api_input = driver.find_element(By.CSS_SELECTOR, "input[name='api_no']")
-            
+            well_name_input = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='well_name']"))
+            )
+            api_input = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='api_no']"))
+            )
             # Fill out the input fields based on provided parameters
             if well_name:
                 well_name_input.send_keys(well_name)
@@ -92,14 +95,14 @@ def search_and_insert_well_info(cursor, db, api_number=None, well_name=None):
                     return False
                 
                 api = search_results[0].text
-                well_name = search_results[1].text
+                wellname = search_results[1].text
                 lease_name = search_results[2].text
                 location = search_results[3].text
                 operator = search_results[4].text
                 status = search_results[5].text
                 
                 # Check if the well name link is clickable (i.e., if there is more information available)
-                well_name_link = driver.find_elements(By.LINK_TEXT, well_name)
+                well_name_link = driver.find_elements(By.LINK_TEXT, wellname)
                 if well_name_link:
                     try:
                         well_name_link[0].click()  # Click on the well name link to open the details page
@@ -108,23 +111,54 @@ def search_and_insert_well_info(cursor, db, api_number=None, well_name=None):
                         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "p.block_stat:nth-of-type(2)")))
                         
                         # Extract additional information from the details page
-                        oil_produced = driver.find_element(By.CSS_SELECTOR, "p.block_stat:nth-of-type(1)").text
-                        gas_produced = driver.find_element(By.CSS_SELECTOR, "p.block_stat:nth-of-type(2)").text
-                        well_status = driver.find_element(By.XPATH, "//th[contains(text(), 'Well Status')]/following-sibling::td").text
-                        well_type = driver.find_element(By.XPATH, "//th[contains(text(), 'Well Type')]/following-sibling::td").text
-                        township_range_section = driver.find_element(By.XPATH, "//th[contains(text(), 'Township Range Section')]/following-sibling::td").text
-                        county = driver.find_element(By.XPATH, "//th[contains(text(), 'County')]/following-sibling::td").text
-                        closest_city = driver.find_element(By.XPATH, "//th[contains(text(), 'Closest City')]/following-sibling::td").text
+                        try:
+                            oil_produced_element = driver.find_element(By.CSS_SELECTOR, "p.block_stat:nth-of-type(1)")
+                            oil_produced = oil_produced_element.text
+                        except NoSuchElementException:
+                            oil_produced = "No value found"
+
+                        try:
+                            gas_produced_element = driver.find_element(By.CSS_SELECTOR, "p.block_stat:nth-of-type(2)")
+                            gas_produced = gas_produced_element.text
+                        except NoSuchElementException:
+                                gas_produced = "No value found"
+
+                        well_status_element = driver.find_element(By.XPATH, "//th[contains(text(), 'Well Status')]/following-sibling::td")
+                        well_type_element = driver.find_element(By.XPATH, "//th[contains(text(), 'Well Type')]/following-sibling::td")
+                        township_range_section_element = driver.find_element(By.XPATH, "//th[contains(text(), 'Township Range Section')]/following-sibling::td")
+                        county_element = driver.find_element(By.XPATH, "//th[contains(text(), 'County')]/following-sibling::td")
+                        closest_city_element = driver.find_element(By.XPATH, "//th[contains(text(), 'Closest City')]/following-sibling::td")
                         
-                        insert_into_data_table(cursor, db, closest_city, well_type, well_status, oil_produced, gas_produced, operator, location)
-                        driver.back()  # Go back to the search results page
-                        # Wait for the previous page to load
-                        wait = WebDriverWait(driver, 10)
-                        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'table.interest_table')))
+                        #oil_produced = oil_produced_element.text if oil_produced_element else "No value found"
+                        #gas_produced = gas_produced_element.text if gas_produced_element else "No value found"
+                        well_status = well_status_element.text if well_status_element else "No value found"
+                        well_type = well_type_element.text if well_type_element else "No value found"
+                        township_range_section = township_range_section_element.text if township_range_section_element else "No value found"
+                        county = county_element.text if county_element else "No value found"
+                        closest_city = closest_city_element.text if closest_city_element else "No value found"
                         
+                        # Insert retrieved data into data table
+                        insert_into_data_table(cursor, db, closest_city, well_type, well_status, oil_produced, gas_produced, operator, location, wellname, well_number)
+                        
+                        # Print the new values
+                        # print("New values after insertion:")
+                        # print("API:", api)
+                        # print("Well Name:", wellname)
+                        # print("Lease Name:", lease_name)
+                        # print("Location:", location)
+                        # print("Operator:", operator)
+                        # print("Status:", status)
+                        # print("Oil Produced:", oil_produced)
+                        # print("Gas Produced:", gas_produced)
+                        # print("Well Status:", well_status)
+                        # print("Well Type:", well_type)
+                        # print("Township Range Section:", township_range_section)
+                        # print("County:", county)
+                        # print("Closest City:", closest_city)
+                        print("Data updated for ", well_name)
                         return True
                     except (TimeoutException, NoSuchElementException) as e:
-                        print(f"Error occurred while retrieving information for API number '{api_number}' and well name '{well_name}': {e}")
+                        print(f"Error occurred while retrieving information for API number '{api_number}' and well name '{well_name}'")
                         return False
                 else:
                     print(f"No information available for the well '{well_name}'.")
@@ -133,126 +167,68 @@ def search_and_insert_well_info(cursor, db, api_number=None, well_name=None):
             print("Please provide either the API number or the well name.")
             return False
     except Exception as e:
-        print(f"Error occurred for API number '{api_number}' and well name '{well_name}': {e}")
+        print(f"Error occurred for API number '{api_number}' and well name '{well_name}'")
         return False
+    finally:
+        # Navigate back to the search results page
+        driver.back()
+        # Wait for the previous page to load
+        wait = WebDriverWait(driver, 20)
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'table.interest_table')))
 
-
-
-# def scrape():
-#     # Connect to MySQL database
-#     db = mysql.connector.connect(
-#                 host="localhost",
-#                 user="raydiant_user",
-#                 password="StrongPassword123!",
-#                 database="raydiant"
-#             )
-#     cursor = db.cursor()
-
-
-#     add_columns_to_data_table(cursor, db)
-
-#     # Retrieve API number and well name from the MySQL table named 'data'
-#     cursor.execute("SELECT api, well_name FROM data")
-#     rows = cursor.fetchall()
-
-#     # Set up a count to keep track of successful retrievals
-#     successful_retrievals = 0
-
-
-#     for row in rows:
-#         api_number, well_name = row
-#         # Search for well information using API number and well name
-#         if api_number and well_name:
-#             if not search_and_insert_well_info(cursor, db, api_number, well_name):
-#                 # If retrieving data with both API number and well name together fails,
-#                 # try fetching the data using only one of them
-#                 print(f"Trying to retrieve data using API number '{api_number}' only...")
-#                 if not search_and_insert_well_info(cursor, db, api_number):
-#                     print(f"Trying to retrieve data using well name '{well_name}' only...")
-#                     search_and_insert_well_info(cursor, db, well_name)
-#         elif api_number:
-#             search_and_insert_well_info(cursor, db, api_number)
-#         elif well_name:
-#             search_and_insert_well_info(cursor, db, well_name)
-#         else:
-#             print("No API number or well name provided for this entry.")
-
-#     # Select all data from the data table
-#     cursor.execute("SELECT * FROM data")
-#     rows = cursor.fetchall()
-
-#     # Define the path to the CSV file
-#     csv_file_path = "data_table.csv"
-
-#     # Write the data to the CSV file
-#     with open(csv_file_path, mode='w', newline='') as file:
-#         writer = csv.writer(file)
-#         # Write the header row
-#         writer.writerow([i[0] for i in cursor.description])
-#         # Write the data rows
-#         writer.writerows(rows)
-
-#     print(f"Data exported to '{csv_file_path}' successfully.")
-#     # Close database connection
-#     cursor.close()
-#     db.close()
-
-
+def scrape():
     # Connect to MySQL database
-    
-db = mysql.connector.connect(
-            host="localhost",
-            user="raydiant_user",
-            password="StrongPassword123!",
-            database="raydiant"
-        )
-cursor = db.cursor()
+    db = mysql.connector.connect(
+                host="localhost",
+                user="raydiant_user",
+                password="StrongPassword123!",
+                database="raydiant"
+            )
+    cursor = db.cursor()
 
+    add_columns_to_data_table(cursor, db)
 
-add_columns_to_data_table(cursor, db)
+    # Retrieve API number and well name from the MySQL table named 'data'
+    cursor.execute("SELECT well_number, api, well_name FROM data")
+    rows = cursor.fetchall()
 
-# Retrieve API number and well name from the MySQL table named 'data'
-cursor.execute("SELECT api, well_name FROM data")
-rows = cursor.fetchall()
+    # Set up a count to keep track of successful retrievals
+    successful_retrievals = 0
 
-# Set up a count to keep track of successful retrievals
-successful_retrievals = 0
+    for row in rows:
+        well_number, api_number, well_name = row
+        # Search for well information using API number and well name
+        if api_number and well_name:
+            if not search_and_insert_well_info(cursor, db, api_number, well_name, well_number):
+                # If retrieving data with both API number and well name together fails,
+                # try fetching the data using only one of them
+                print(f"Trying to retrieve data using API number '{api_number}' only...")
+                if not search_and_insert_well_info(cursor, db, api_number=api_number, well_number=well_number):
+                    print(f"Trying to retrieve data using well name '{well_name}' only...")
+                    search_and_insert_well_info(cursor, db, well_name=well_name, well_number=well_number)
+        elif api_number:
+            search_and_insert_well_info(cursor, db, api_number=api_number, well_number=well_number)
+        elif well_name:
+            search_and_insert_well_info(cursor, db, well_name=well_name, well_number=well_number)
+        else:
+            print("No API number or well name provided for this entry.")
 
+    # Select all data from the data table
+    cursor.execute("SELECT * FROM data")
+    rows = cursor.fetchall()
 
-for row in rows:
-    api_number, well_name = row
-    # Search for well information using API number and well name
-    if api_number and well_name:
-        if not search_and_insert_well_info(cursor, db, api_number, well_name):
-            # If retrieving data with both API number and well name together fails,
-            # try fetching the data using only one of them
-            print(f"Trying to retrieve data using API number '{api_number}' only...")
-            if not search_and_insert_well_info(cursor, db, api_number):
-                print(f"Trying to retrieve data using well name '{well_name}' only...")
-                search_and_insert_well_info(cursor, db, well_name)
-    elif api_number:
-        search_and_insert_well_info(cursor, db, api_number)
-    elif well_name:
-        search_and_insert_well_info(cursor, db, well_name)
-    else:
-        print("No API number or well name provided for this entry.")
+    # Define the path to the CSV file
+    csv_file_path = "data_table.csv"
 
-# Select all data from the data table
-cursor.execute("SELECT * FROM data")
-rows = cursor.fetchall()
+    # Write the data to the CSV file
+    with open(csv_file_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        # Write the header row
+        writer.writerow([i[0] for i in cursor.description])
+        # Write the data rows
+        writer.writerows(rows)
 
-# Define the path to the CSV file
-csv_file_path = "data_table.csv"
-
-# Write the data to the CSV file
-with open(csv_file_path, mode='w', newline='') as file:
-    writer = csv.writer(file)
-    # Write the header row
-    writer.writerow([i[0] for i in cursor.description])
-    # Write the data rows
-    writer.writerows(rows)
-
-print(f"Data exported to '{csv_file_path}' successfully.")
-# Close database connection
-cursor.close()
-db.close()
+    print(f"Data exported to '{csv_file_path}' successfully.")
+    # Close database connection
+    cursor.close()
+    db.close()
