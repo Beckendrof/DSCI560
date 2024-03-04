@@ -1,7 +1,6 @@
 import mysql.connector
 import pandas as pd
 import numpy as np
-df=pd.read_csv('well_info.csv')
 
 def connect_to_mysql():
     try:
@@ -139,6 +138,7 @@ def insert_data(connection, df):
         print(f"Error inserting data: {e}")
 
 def upload():
+    df=pd.read_csv('well_info.csv')
     connection = connect_to_mysql()
 
     if connection:
