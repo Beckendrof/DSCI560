@@ -9,7 +9,11 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain_community.llms import LlamaCpp
 from llama_cpp import Llama
 from htmlTemplates import css, bot_template, user_template
+from dotenv import load_dotenv
+import os
 from langchain import OpenAI
+
+load_dotenv()
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -41,7 +45,7 @@ def get_vectorstore(text_chunks):
 def get_conversation_chain(vectorstore):
     llm = OpenAI(
 	temperature=0,
-	api_key="#####",
+	api_key=os.getenv("API_KEY"),
 	model_name="gpt-3.5-turbo-1106"
 )
     

@@ -2,11 +2,15 @@ from piazza_api import Piazza
 from bs4 import BeautifulSoup
 import json
 import re
+import os
 import time
+from dotenv import load_dotenv
+
+load_dotenv()
 
 p = Piazza()
-email = 'Yiyueyua@usc.edu'
-password = 'Lyy3124280095'
+email = os.getenv('USERNAME')
+password = os.getenv("PASSWORD")
 p.user_login(email=email, password=password)
 
 class_id = 'lll6cacyxjfg3'

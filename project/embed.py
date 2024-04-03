@@ -2,6 +2,7 @@ import spacy
 import torch
 import json
 import numpy as np
+import os
 from transformers import BertTokenizer, BertModel
 
 nlp = spacy.load("en_core_web_sm")
