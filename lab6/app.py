@@ -1,39 +1,14 @@
 import streamlit as st
-from dotenv import load_dotenv
-from PyPDF2 import PdfReader
-from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.llms import LlamaCpp
-from llama_cpp import Llama
 from htmlTemplates import css, bot_template, user_template
 from dotenv import load_dotenv
 import os
 from langchain import OpenAI
 
 load_dotenv()
-
-def get_pdf_text(pdf_docs):
-    text = ""
-    for pdf in pdf_docs:
-        pdf_reader = PdfReader(pdf)
-        for page in pdf_reader.pages:
-            text += page.extract_text()
-    return text
-
-
-def get_text_chunks(text):
-    text_splitter = CharacterTextSplitter(
-        separator="\n",
-        chunk_size=500,
-        chunk_overlap=100,
-        length_function=len
-    )
-    chunks = text_splitter.split_text(text)
-    return chunks
-
 
 def get_vectorstore(text_chunks):
     embeddings = HuggingFaceEmbeddings(
@@ -75,8 +50,8 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Chat with PDFs",
-                       page_icon=":robot_face:")
+    st.set_page_config(page_title="Chat with your TA",
+                       page_icon=":teacher:", layout="wide")
     st.write(css, unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
@@ -84,29 +59,23 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("Chat with PDFs :robot_face:")
-    user_question = st.text_input("Ask questions about your documents:")
+    st.header("Chat with AI")
+
+    chat_history = st.session_state.chat_history or []
+
+    for i, message in enumerate(chat_history):
+        if i % 2 == 0:
+            st.write(user_template.replace(
+                "{{MSG}}", message.content), unsafe_allow_html=True)
+        else:
+            st.write(bot_template.replace(
+                "{{MSG}}", message.content), unsafe_allow_html=True)
+
+    # Text input for user question
+    user_question = st.text_input(label="", placeholder="Ask questions", key="user_question")
+
     if user_question:
         handle_userinput(user_question)
-
-    with st.sidebar:
-        st.subheader("Your documents")
-        pdf_docs = st.file_uploader(
-            "Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
-        if st.button("Process"):
-            with st.spinner("Processing"):
-                # get pdf text
-                raw_text = get_pdf_text(pdf_docs)
-
-                # get the text chunks
-                text_chunks = get_text_chunks(raw_text)
-
-                # create vector store
-                vectorstore = get_vectorstore(text_chunks)
-
-                # create conversation chain
-                st.session_state.conversation = get_conversation_chain(
-                    vectorstore)
 
 
 if __name__ == '__main__':

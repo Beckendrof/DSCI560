@@ -1,0 +1,586 @@
+post1: Hi Class, I updated the letter grades on USC Grading and Roster System. I also updated the letter grade distribution in @1300. Please calculate your letter grade carefully and let me know any discrepancies. Hopefully everything is fixed now. Regards, M R Rajati
+post1-comment1: Thanks for the quick update
+post1-comment2: Hi professor, my grade was not updated on OASIS. Could you check about that?
+post1-comment2-reply1: please open a regrade request
+
+post2: Hi, Letter grades must be available to students on Grade Report or OASIS. I calculated your total score using the following formula: $$0.45\times HW + 0.2\times Midterm1 +0.25\times Midterm2 +0.1\times Project$$ where HW is the (sum of your homework scores minus the lowest homework score minus half of the second lowest score) divided by (6.5) . Then I used the following thresholds to calculate your letter grade: B-?B60B+69A-81A86 Here is the distribution of letter grades: A312A-44B+50B6 Only one student benefitted from the 5% extra credit that is assigned based on Piazza Participation and they were notified. Super important, please read twice: Please note that in such a large class, whatever threshold I use, there will be students whose score is less than one percent short of receiving the next letter grade. Please DO NOT request changing the thresholds because you are only 0.7% or 0.3% away from, say, ...an A-. If I change the threshold, there will be people who are 0.2% away from, say, ...an A- according to the new threshold. The thresholds were devised to make the gap between recipients of letter grades as large as possible, and those gaps are still small. Please remember that I have graded this class extremely leniently, and its average is larger than 3.8, which is above an A-. Also, we will NOT entertain HW and Exam regrading requests to compensate some students' 0.3% gap from an...A-. The regrading period has already ended and your grades will be submitted to the registrar in a couple of days. If you have reason to believe that I miscalculated your letter grade (this is different from a regrading request), please contact me by Tuesday December 19, 12:00 Noon PST. It has been a pleasure to teach this class and I believe it was yet another very successful offering of DSCI 552. Happy holidays! Wish everyone a happy and healthy new year! Regards, M R Rajati 
+post2-comment1: Hello, if I have a question regarding the miscalculation of my final grade, should I make a post on Piazza, or I can email Professor Rajati directly?
+post2-comment1-reply1: The professor will update it soon. Please be patient.
+
+post3: Hi Class, The response rate of course evaluations is still low. Please do me a favor and fill in your course evaluations, as they will be closing tomorrow. Thanks! Regards, M R Rajati
+
+post4: Hi Class, You can find the final project of DSCI 552 here: https://www.dropbox.com/sh/38zygdpo6u7alwy/AAB1PJuhqF-58GZJ-oD4xl5Ya?dl=0 It's due Monday Dec 11, 4:00 PM PST. If submission is done between 4:00 PM and 11:59 PM the same day, you will incur 30% penalty. Submissions received after 11:59 PM will receive a zero. Regards, M R Rajati
+post4-comment1: Are we using the 2.6GB `data.zip`?
+post4-comment1-reply1: that is the only one present in https://dataverse.jpl.nasa.gov/dataset.xhtml?persistentId=doi:10.48577/jpl.QJ9PYA
+post4-comment1-reply2: I'm assuming I have to unzip the 2.6GB file, correct?
+post4-comment1-reply3: I have downloaded and unzipped the 2.6GB file (which takes a long time) and there you can find the labels and tiles (JSON and png files). So yes.
+post4-comment1-reply4: how long did it take you? file explorer kept crashing when I tried to extract it but it's finally started to extract successfully one of the folders ('_MACOSX')...
+post4-comment1-reply5: Downloading the zip file didn't take too long but extracting the data took like an hour (maybe a bit more)
+post4-comment1-reply6: We have two data.zip files of different sizes. which one to use ?The one uploaded in the dropbox is of size 1.4 GB and the file on dataverse is of size 2.6GB
+post4-comment1-reply7: I noticed that too. What is the difference?
+post4-comment1-reply8: Its the same dataset. The one present in dropbox was downloaded a few days back. Since then, new data has been added to the original dataset. 
+post4-comment2: which dataset we are using? 
+post4-comment2-reply1: the data.zip present in the link
+post4-comment2-reply2: 2.6GB file and the .txt files for train, val, test will be given to us in the future
+post4-comment3: The instructions say (1. (b) ii.): "The dataset includes files for splitting the data into train, test and validation.However, you will be provided by an improved version of those files when arepo is created:A. train_source_images.txtB. test_source_images.txtC. val_source_images.txt" However, there is currently no link to create a repo for the final project at this post @42. When can we expect to access these txt files?
+post4-comment3-reply1: soon^tm
+post4-comment3-reply2: it is now updated!
+post4-comment4: It said There are 214 subframes and a total of 119920 tiles. But, there are total of 414 folders named PSP_ and ESP_. If I open each folder, it has labels and tiles folders. Are we using all those 414 folders for the project?
+post4-comment4-reply1: I suspect once we get the train, test, and source .txt files it will only include the referenced 214, but can't know for sure until to repo is accessible.
+post4-comment4-reply2: It makes sense, thank you!
+post4-comment4-reply3:  Why don’t you start setting up the pipeline assuming you have the train, validation, and test set? You can randomly split the data, for example. M R Rajati’s phone 
+post4-comment5: I do not have access to the dataset website cause I am in China. Could anyone share the dataset with me? Thanks a lot for your help.
+post4-comment5-reply1: I can share it with you over slack. Does that work?
+post4-comment5-reply2: That's good, but I am unfamiliar with Slack, could you please guide me to get the dataset?
+post4-comment6: Can we use the code from the data_prep_examples file present in the link for data: https://dataverse.jpl.nasa.gov/dataset.xhtml?persistentId=doi:10.48577/jpl.QJ9PYA
+post4-comment6-reply1: You can use it. But it has lots of errors. You will need to edit the code to properly process the data. You are welcome to do that. We have edited that code to properly process the inputs. We would be sharing the updated data prep file today.
+post4-comment7: How do we upload this data to our repository? There's a timeout error with regular "git add", so I tried it with git lfs, but still got this error message: "Uploading LFS objects: 0% (0/1), 0 B | 0 B/s, done.batch response: This repository is over its data quota. Account responsible for LFS bandwidth should purchase more data packs to restore access.error: failed to push some refs"
+post4-comment7-reply1: There is no need
+post4-comment7-reply2: So, just to clarify, we do not need to upload the dataset, but rather we only upload the notebook where we code the solutions?
+post4-comment7-reply3: Yes you don’t need to upload the dataset.
+post4-comment8: When we can expect to get the train, test and validation txt files?
+post4-comment8-reply1: it was published yesterday, just create ur repo
+post4-comment8-reply2:  Start creating the pipeline by choosing your own train/validation/ test randomly if you can. That’s a small thing. I could have asked you to do it randomly. I was promised they will post it today. M R Rajati’s phone 
+post4-comment9: can we use Torch instead of Keras , is there any penalty for the dl framework choice?
+post4-comment9-reply1: You may, but the grading will be based on Keras so be aware that this may make the evaluation of your project harder, slower and potentially less accurate even though the CPs try our best. So we would prefer you to use Keras if it's all the same!
+post4-comment10: For question 1c(i), do we need to create functions for regularization, cropping, random zooming, rotating, flipping, contrasting, and translation? Sorry, I did not understand this question very well. 
+post4-comment10-reply1: you can use opencv as mentioned for this task
+post4-comment10-reply2: Perfect. But do we need to actually crop, zoom, rotate, etc. the images in this step, or is it more for other steps? If we do need to crop, zoom, rotate, etc. is it with random values? Thank you so much and sorry for bothering
+post4-comment11: how long does it take you guys to train each epoch? mine train really slow even after reducing the complexity to minimum
+post4-comment11-reply1: try increasing batch size, it shouldnt be too bad
+post4-comment12: The jpl link to download dataset is taking very long time to load in the web browser https://dataverse.jpl.nasa.gov/dataset.xhtml?persistentId=doi:10.48577/jpl.QJ9PYA 
+post4-comment12-reply1: prob getting overloaded
+post4-comment12-reply2: Hi, I am facing the same issue and it's taking way too long to load. Is it possible to upload the 2.6 GB data.zip from the link to dropbox
+post4-comment13: Can we use the data.zip file that is present in the dropbox instead of downloading from https://dataverse.jpl.nasa.gov/dataset.xhtml?persistentId=doi:10.48577/jpl.QJ9PYA ?
+post4-comment13-reply1: same question.
+post4-comment13-reply2: @1096
+post4-comment14: When grading, will the entire repo be cloned and the notebook ran? I'm asking because I pushed all the data to my repo before seeing that we didn't need to and so in my notebook I used a relative path to get the data. Therefore, if you guys just take my notebook and run it, the data may be in a different relative path and then the notebook wouldn't be able to run. However, if the grading is just looking at our notebook/results, I am good. 
+post4-comment14-reply1: +1
+post4-comment14-reply2: Of course it is best if you CAN upload the data, but you should always use relative path as @40 indicates.TLDR: you are good!
+post4-comment15: Do I need to create a new notebook and follow the homework submission rules? I.e. submit a file Nandi\_Soumyaroop\_final_project.ipynb, or can I just work off of the dataPreprocessingNotebook that was in the repo and continue from there?
+post4-comment15-reply1: just change the notebook name
+post4-comment16: i wanna cry, my crappy intel mac takes 50 min / epoch * 20 I don't have GPU acceleration can i just submit the code without running the whole code is that fine?
+post4-comment16-reply1: you can maybe try google colab i also have intel and dont have GPU accel so i used that instead but extracting all the data from the zip file takes a long time 
+
+post5: Hi Class, The course evaluations are open now, but the response rate is low. Please do me a favor and fill in your course evaluations. Thanks! Regards, M R Rajati
+post5-comment1: Where can we submit the course evaluations? Is that one on the blackboard? 
+post5-comment1-reply1:  You must have received an invitation email. I can resend it. M R Rajati’s phone 
+post5-comment1-reply2: I found the email that I didn't read, sorry about the confusion.
+post5-comment1-reply3: can you please tell the email subject
+post5-comment1-reply4: USC Learning Experience Evaluations
+post5-comment1-reply5: Thanks 
+post5-comment2: can through with Course Evaluation in BlackBoard
+
+post6: Hi Class, Dr. Mark Wronkiewicz from JPL will be our guest speaker on Monday, Nov. 27, online. I think it is a good idea to do the whole session online, as it might be hard to capture student questions in SGM 123. https://ml.jpl.nasa.gov/members/mark-wronkiewicz.html Here is the message I received from him: I’ll plan on talking for ~1 hour about JPL science-focused projects (and connect with your class concepts wherever I can). I’m hoping the students are engaged enough to answer questions and will stay as long as they want to discuss. Regards, M R Rajati
+post6-comment1: Is this going to be held during the class hours? I wanted to know since there is a joint session too. Can you please clarify.
+post6-comment1-reply1: Joint session is 20th, this is 27th
+post6-comment1-reply2: My bad 😬 messed up dates in my mind. Thank you though!!
+post6-comment2: Is this going to happen during both the morning and afternoon lectures? And, if this is totally online, will that mean there's no office hours on the 27th?
+post6-comment3: What time is the JPL session today ?
+post6-comment3-reply1:  12:00 noon. M R Rajati’s phone 
+post6-comment3-reply2: thank u professor
+post6-comment4: what is the zoom meeting link?
+post6-comment4-reply1: you will have to go to DEN USC. online lecture link
+
+post7: Hi Class, I have decided to hold a joint session on Monday Nov 20. In the 12-1:50 session, I will present HMMs, and it will be likely a short lecture. In the 3:30-5:20 lecture, I will present Reinforcement Learning, but I WILL NOT HOLD YOU RESPONSIBLE for it in the midterm. Everyone is welcome to join the afternoon session and its recording will be uploaded on D2L as well. Regards, M R Rajati
+post7-comment1: Zoom Meeting Link: https://usc.zoom.us/j/94051898406?pwd=K2wrcWxFem5KYVhDdkt3Mk5XcE5EUT09 
+post7-comment2: Monday Nov. 20 is the correct date.
+post7-comment3: Hi Professor, the recording of Reinforcement Learning lecture isn't on D2L yet (but this Monday's lecture is already there.) Could you please check on that? Thank you!
+post7-comment3-reply1:  I was told it was uploaded in Week 13? M R Rajati’s phone 
+post7-comment3-reply2: I found it in Week 13. Thank you!
+
+post8: Hi Class, To see your standing in DSCI 552, calculate the following grade: 0.45×Midterm1+0.55×HW in which HW is the average of your homework scores so far. That is an estimate of your performance, assuming that you perform similarly in Midterm2 and your future assignments and the project. You can drop your lowest HW score and play what-if games too. Then, compare your score with the thresholds I used in another offering of this course to have an idea where you stand in this class: B- 39 B 58 B+ 68 A- 80 A 86.8 In that class, here is the number of students who received each grade: A 29 A- 10 B+ 2 B 0 B- 0 C+ 2 C 0 Please note that I need to have all elements of your score and the performance of the class to determine your letter grade. The above scenario is a hypothetical scenario based on approximately 50% of your grade, and projecting it to the future as well as using the thresholds used for a different class and different exam. My experience is that it usually offers a good estimate of the standing of the students. Regards, M R Rajati
+post8-comment1:  The thresholds here are totally different with that in syllabus. If finally my score is 75. According to the thresholds here, it is B+. But according to the thresholds in syllabus, it is C, Which one should I refer to? 
+post8-comment1-reply1: The only thing that is guaranteed is the table in the syllabus. That shows the MINIMUM grade you will receive.I cannot guarantee anything else. However, I have never used the table in the syllabus in DSCI 552. If you read the above, you will see that I insist that the above scenario is a hypothetical scenario and you cannot make assumptions whatsoever. To reiterate:Please note that I need to have all elements of your score and the performance of the class to determine your letter grade. 
+
+post9:  Hi Class, The first midterm of DSCI 552 will be held on Friday, October 20, 8:00 AM PDT. The location of Midterm 1 is: On Campus Students in 12-1:50 Section: THH 101DEN Students: OnlineOn Campus Students in 3:30-5:20 Section: THH 201All Students with OSAS extra time accommodations who don't want to take their exam in the test center: VPD 106 Please bring your laptops and cellphones with a Scanner App (Such as CamScanner) installed on the phone to the exam room, even if you take the exam with the OSAS test center. You will upload a scanned version of your exam on D2L after the exam time is up. Also, please bring your USC picture ID to the exam room and be ready to show it to the proctors. If you have OSAS accommodations and have not posted your letter on Piazza yet, please make a private post to ALL INSTRUCTORS and use OSAS tag ASAP. If you have done so before, you do not need to do anything. For DEN students who are not in Los Angeles area, the exam will be posted in the Assignment Section of D2L/DEN. You will be proctored on DEN and you should make every effort to be on DEN 15 minutes before your exam starts. You should have your USC ID or any official picture ID ready and show it to your proctor prior to the start of the exam. Please do not use headphones (earplugs to avoid noise are OK) during the exam and be ready to unmute if your proctor asks. DEN students who take the exam online will write their answers on sheets of paper and scan them and upload a PDF on DEN/D2L, or will just upload the PDF of the answers they wrote using their tablet. They will be given 15 minutes after the exam to upload the exam on the assignment section of DEN/D2L. Using electronic devices for anything other than exam calculations or writing the solutions of the exam or connecting to DEN/D2L is prohibited. On-Campus Students and DEN students who take the exam on campus will write their solutions on paper and after they are done, they scan the solutions and upload them on D2L. Please stop writing at the end of the exam, otherwise you run the risk of not being able to submit your solutions. (DO NOT take that risk). The exam is closed-book and notes. You can bring ONE letter-sized cheat sheet (back and front) to the exam. It can be handwritten or typed, but it cannot be electronic. You should use a hard copy. Calculators ARE ALLOWED (and probably needed) in the exam. A simple scientific calculator (~$10-$20) suffices. Graphical calculators are not allowed. The exam will be on the material presented in Lessons 1-5. Appendices that WERE TAUGHT IN CLASS are fair game for the exam. I have posted two sample exams for your practice. Please note that you should not make any assumption about the theme and the level of the questions in your midterm based on the sample exams. You can expect around 6 questions in the midterm, and you may expect any type of question. The exam will last for around 100 minutes. Please arrive early, because the time of the exam cannot be extended and we must leave the room 10 minutes before the next lecture starts. Please make sure that you get enough sleep the night before the exam. Also, you need to practice as many sample problems (from your textbook and the posted sample exam) as possible. Reading the solutions is NOT ENOUGH. You have to actually sit down and work out your own solutions. A lot of people have problems with time management in exams. That can be remedied with working on a lot of sample problems. Good Luck, M. R. Rajati 
+post9-comment1: Hi Professor,I wanted to know that for on-campus student, how much time we will get for uploading our paper to D2L after finishing the paper in 100 minutes. Will we get at least 10 or 15 min to scan and upload to D2L as the one Den student have after 100 minutes of exam?Thanks
+post9-comment1-reply1: Yes, reasonable time will be given to the students for uploading.
+post9-comment2: Are the sample exams you posted the ones already in @12 or are there new ones?
+post9-comment2-reply1: they are in @12
+post9-comment3: If the exam asks for values based off a t-distribution or something else that requires a table, will the tables be provided?
+post9-comment3-reply1: yes it will be
+post9-comment4: Is the total score of the 6 questions-test we take have 120points and we cannot exceed 100/100?
+post9-comment4-reply1: Make no assumptions whatsoever. None.
+post9-comment5: Lessons 1-5 mentioned above correspond to ISLR chapters 1 to 5. chapter 6 is not coming in the midterm?
+post9-comment5-reply1: Lessons refer to slides, which are the primary resource for this course.
+post9-comment5-reply2: Is Lesson 5 up to Model selection?
+post9-comment5-reply3: If you look at the slides, they are named Lesson X - Topic name, and yes Lesson 5 is named model selection
+post9-comment6: For DEN Local students, which classroom should we use?
+post9-comment6-reply1: Same as 12-1:50 section, unless you have OSAS accommodations, in which case, you must go to VPD. -------------------------------------------------------------- Mohammad Reza Rajati, PhD Senior Lecturer, Thomas Lord Department of Computer Science University of Southern California 
+post9-comment6-reply2: Thank you
+post9-comment7: Just to confirm, for the DEN student exam proctoring on Zoom, do we use the same Zoom link as we use for lecture? That is the only one that I can find on D2L.
+post9-comment7-reply1: @Siddharth Aggarwal Can you please confirm this? Thank you!
+post9-comment7-reply2: Yes, as i communicated in OH, its the same class link. If there are any issues, I'll post the changes on piazza and notify everyone 
+post9-comment7-reply3: Thank you!
+post9-comment8: Just to confirm, is THH the humanities building on the opposite side of campus from where lecture normally is?
+post9-comment8-reply1:  I am inclined to say yes, but you must double check with USC maps: maps.usc.edu M R Rajati’s phone 
+post9-comment9: Are we expected to bring blue books or scratch paper, or will these be provided?
+post9-comment9-reply1: We are only allowed a cheat sheet from what I know. Usually, we will have some extra space at the end of the question paper for any scratch work.
+post9-comment10: For DEN students, are we being proctored on the same zoom link used for class?
+post9-comment10-reply1: yeah just use that one for now, if anything changes we will inform you
+post9-comment10-reply2: Waiting in the waiting room 
+post9-comment10-reply3: It says for me "waiting for host to start the meeting"
+post9-comment10-reply4: sweet 
+post9-comment10-reply5: no problem, it hasnt been opened
+post9-comment10-reply6: no assignment for midterm upload yet
+post9-comment10-reply7: Can you please join this zoom link : https://usc.zoom.us/j/97040902730
+
+post10: Hi Class, There are no rooms for our midterm exams at 10-11:50 AM at USC. According to the syllabus, I will change the hours of the midterm exams to 8 AM-9:50 AM, but the dates stay the same. Both of the exams will be IN PERSON. This decision is a last resort, and it makes sure that we can have the exam for all students at the same place. Regards, M R Rajati
+post10-comment1: What does that mean BOTH? Can we take a midterm at 10-11:50 too?
+post10-comment1-reply1: it means both midterm 1 and 2
+post10-comment1-reply2:  We have two midterms. Both were at 10. Now they’re at 8. M R Rajati’s phone 
+post10-comment2: Just to confirm, midterm will be held on the 20th of October right?
+post10-comment2-reply1: the date DID NOT change, refer to the syllabus for all dates
+post10-comment3: Where will the midterms be held? I'm a local DEN student so am unfamiliar with the campus
+post10-comment3-reply1: @533
+
+post11: From syllabus: If you have a question about the material or logistics of the class and wish to ask it electronically, please post it on the piazza page (not e-mail). Oftentimes, if one student has a question/comment, others also have a similar question/comment. Make public posts in these cases (you may post them anonymously). Use private Piazza posts with the professor, TA, and graders only for issues that are specific to you individually (e.g., a scheduling issue or grade issue). Try minimizing the use of email by the course staff. Following the above process also makes sure that you receive credit for your Piazza contributions.
+
+post12: Hi everyone,I am sharing a recorded tutorial session.This covers homework 0 and the basic Anaconda and GitHub setup (clone, commit, push, pull, etc). Recording link: https://usc.zoom.us/rec/share/QYn1l2yrjh_9SsaFA3Do93rDzStSJvtfsWOQxzj2iYZejXn-XUVdy2X3Yp2KDRlU.OFSYx_hJQ9JR4DUZ?startTime=1674190963000 Slides and HW0 link: https://github.com/woojeongjin/HW0 Best, Woojeong
+post12-comment1: Reading the csv file using pandas, shouldn't we use skiprows = [2] in order to skip the second row ? skiprows=[1] skips the first row instead of second.
+post12-comment1-reply1: yes skiprows = [2] skips the second row
+post12-comment2:  Create a Python dictionary object whose keys are the headers of the dataframe created in the read_csv() exercise and values are Python list objects that contain data corresponding to the headers. Do we have to consider playerID column which has been set as an index column as the key for the dictionary as well ? 
+post12-comment2-reply1: Yes, in the solved homework notebook, playerID column is considered as a key. 
+post12-comment2-reply2: Actually making PlayerID an index column was just a part of pandas section after that you might use the normal data frame to work along other tasks. Basically you have to convert the whole data frame in a dictionary format which should match the dataset of converted back to data frame itself.
+post12-comment3: I know I'm being nit-picky here, but this part of the assignment reads: "Select the id of the players who are registered in ATL and HOU and whose salary is higher than one million.", which suggests we want to find the players who were a part of ATL team and HOU team at some point (assuming the players can switch teams). The solution, however, returns the ids of players who were a part of ATL or HOU. If we want to follow the spec/instructions precisely, then grouping players by ATL and HOU teams and counting the number of teams for each player would probably be desired: players_in_atl_or_hou = df[(df['teamID'].isin(['ATL', 'HOU'])) & (df['salary'] > 1000000)] players_and_distinct_teams = players_in_atl_or_hou.groupby('playerID')['teamID'].nunique() players_in_both_teams = players_and_distinct_teams[players_and_distinct_teams == 2] players_in_both_teams.index.tolist() We get a much shorter list of players: ['bournmi01', 'hamptmi01', 'wagnebi02'] 
+post12-comment3-reply1: If you feel this can help you practice more go for it. But yes I agree the wording here can be a bit confusing.Its kinda like saying "students in USC and UCLA", would you interoperate that in the same way?Once again proven that english is harder than machine learning sometimes, but ultimately its not super important since this assignment is just aimed to help you warm up. If you find any other wording related questions we will make sure that a clear answer is given.
+post12-comment4: This video seems to be out of date and I can't open it. Could you please upload it againThis video seems to be out of date and I can't open it. Could you please upload it again?
+post12-comment4-reply1: Did you log in to Zoom? I have no problem accessing the video with the link. Could you elaborate what your issue is?
+
+post13: Hi all, Here is the office hour schedule, any changes will be updated and posted on Piazza. In-person OH will be located at the SAL computer lab if not specified. Day/TimeCP/TAZoom LinkMonday 10-12 amSoumyarooplink (pwd: dsci552)Monday 6-8 pmChristopher Myau Zoom Link (dsci552) Monday 8-10 pmSarth Kanani Sarth Kanani Tuesday 10-12 amKaustubh KothawaleZoom Link(dsci552)Tuesday 12 -2 pmTanmay JainZoom Link (dsci522)Tuesday 2-4 pmDarshan VishwanathZoom LinkTuesday 4-6 pmVishal SinghZoom LinkWednesday 8-10 amAbhishek AjmeraZoom LinkWednesday 10-12 amTarunbir GambhirZoom Link (pwd: dsci552)Wednesday 2-4 pmIan WuZoom LinkWednesday 6-8 pmKshitij PatelKshitij OHWednesday 8-10 pmWoojeong JinlinkThursday 8-10 amAabha RanadelinkThursday 10-12 amChangxun (Shawn) Lilink (pw: dsci552)Thursday 12-2 pmParth KapadialinkThursday 2-4 pmSrivatsav GunisettySrivatsav OH LinkThursday 4-6 pmVansh Rajesh JainVansh OH linkThursday 6-8 pmQasim SiddiquiZoom (pwd: dsci552)Thursday 8-10 pmSiddharth AggarwallinkFriday 8-10 amSiddharth ByaleSiddharth OHFriday 10-12 amGrace KimGrace (pw: dsci552)Friday 12-2 pmDaniel Pereira da CostaZoom linkFriday 2-4 pmZhuo ChenPassword: DSCI552Friday 4-6 pmPrayas DixitPrayas OH LinkFriday 6-8 pmVedanvitaVedanvita OHFriday 8-10 pmShreyash ZanjalShreyash OH linkFriday 12-2 pmYaqi HulinkFriday 12:30-2:30 pmPiyush DeepPiyush Deep's Office HourFriday 10-12 amHassan ShahHassan Shah LinkFriday 2-4 pmVibhav DeshpandeVibhav's LinkFriday 4-6 pmKirthika GurumurthyKirthika OH Link 
+post13-comment1: My In-Person OHs will be in the Baum Student Center in RTH unless said otherwise
+post13-comment2: My In-Person OHs will be in Baum Student Center in RTH
+post13-comment3: My In-Person OHs will be in the Baum Student Center in RTH 
+post13-comment4: My in-person office hours will be in the basement of Leavy Library 
+post13-comment5: Hi, my in person office hours will be in RTH 219.
+post13-comment6: Is Aabha having OH this week? It seems as though some CPs are and some aren't, so is there any way to know who is?
+post13-comment6-reply1: Refer to the schedule on top, unless said otherwise there are no OHs scheduled
+post13-comment6-reply2: I don't have OH scheduled this week. But feel free to make a post on Piazza if you have any questions.
+
+post14:  #pin
+post14-comment1: Edit: Posted in wrong section.
+
+post15: Hi all, Here is the link for Homework submission. Future homework submission links will be provided here after the deadline for the previous homework. (Note: Homework 0 is not graded and you don’t have to make a submission. But you can use the link for test purposes) Homework 0: https://classroom.github.com/a/Y-v87gZB Homework 1: https://classroom.github.com/a/Ud4Ja_W5 Homework 2: https://classroom.github.com/a/pxAvblRv Homework 3: https://classroom.github.com/a/nUhZZjC1 Homework 4: https://classroom.github.com/a/c4YzY-PT Homework 5: https://classroom.github.com/a/N46wag9k Homework 6: https://classroom.github.com/a/jMvl29md Homework 7: https://classroom.github.com/a/2C6tffKD Homework 8: https://classroom.github.com/a/Bz-pWU7u Final Project: https://classroom.github.com/a/J0DgMjNz 
+post15-comment1: Hello! Do we have to upload something in assignments submission in D2L? Thanks!
+post15-comment1-reply1: no everything is on github, D2L is just for grades
+post15-comment2: Heads up there is a waiting period of maximum 10 days for Github to confirm that you are a student that can enroll in the classroom
+post15-comment3: Just for clarification, can we submit homeworks until 11:59pm of the same date listed in the syllabus? Or, is it 4pm like the final project?
+post15-comment3-reply1: 11:59
+post15-comment3-reply2: Thank you!
+post15-comment4: Hi, a few general doubts: 1) How do I verify that the .ipynb file that I have put up on the github is working fine, and will also run as expected for the TAs as well? 2) If the package that I have used in my file is not installed in the TAs' device, and they are unable to run my file due to this, will that be an issue on my part? 3) Also, if the version of the package that the TA has, is somehow incompatible with the version of the package that we have used in the submission, is there anything that the students can do about this? Thank you!
+post15-comment4-reply1: 1. Just make sure it works for you thats all you can do, no need to stress2. Thats why there is the optional requriment.txt file @403. once again if you are super concerned then use the optional requirement.txt @40
+post15-comment5: can we get the HW6 submission link published whenever someone has an opportunity? Thanks, James
+post15-comment5-reply1: same way here..if we can get the link of HW7 i'd appreciate it!
+post15-comment5-reply2: +1 for HW7 link.
+post15-comment5-reply3: I just published the link for HW7
+post15-comment6: For Final Project do we have to fork the repository and then upload? As I did not have an option to upload in main branch in my case.
+
+post16: Hello everyone, Please enter your Github Usernames (the one that you will use to submit HWs) and email in the following spreadsheet: https://docs.google.com/spreadsheets/d/1y3QHIa0Eo--Vb2NI-Qdn5A9TPP4YHgMhP4S9agDqJxk/edit?usp=sharing You can access this Google sheet only if you log in with your USC email. Suggestion: Create a Github account using your USC email ID and submit homework using that account. Note: If you do not provide your Github Usernames, we will not be able to grade your homework. Also, please check if your name is not present in the spreadsheet even though you have registered for the course. If not, comment below or message privately and mention your Github username. If you are not registered in the course, your name will not be present. In that case, contact the department/myViterbi for D-clearance and register first.
+post16-comment1: Is it mandatory to create a new github account using usc email? or can I use the one which I already have created with my personal email.
+post16-comment1-reply1: it is not mandatory, you are welcome to use your own account
+post16-comment1-reply2: In which column can I update the email id to use my personal github account ?
+post16-comment1-reply3: You just put in your github ID, you are not changing your email, the email is for identification now github
+post16-comment2: Hello, I just realized I didn't add my id in the sheet, I just added that now, is that okay as I already submitted HW1?
+post16-comment2-reply1: you are all good
+post16-comment3: Hello, I just realized I didn't add my github id in the excel sheet above, I just added that now, is that okay as I already submitted HW1? 
+post16-comment3-reply1: you are all good
+
+post17: Homework Assignments Submission Rules (Absolutely important) Hello Class, 1. For all homework assignments, we will use the GitHub classroom for programming assignments’ submission. TAs/CPs will post an invitation link for each assignment before the due day. For submission, all you need to do is click that link to accept that assignment, and it will redirect you to a private repository for that programming assignment. Please use only one GitHub account for submission during the whole semester. 2. For all assignments, when submitting, please organize your code and data file as the directory structure shown in the figure below (P.S. The top-level folder is the root of the GitHub repository). Also, please use a relative path when loading your data file so that TAs can execute your Jupyter Notebook files without changing everything. Also, please avoid using “” for specifying a path. No matter you are specifying an absolute path or a relative path, using backslash is always a bad idea since it cannot be recognized correctly in platforms other than Windows. Instead, one should always use “/”, e.g. “C:/Users/user1/Desktop”, “/usr/bin”, or “../data/notebooks”. Using the following figure as an example, the correct path should be …/data/vertebral_column_data/column_2C.dat. Do not use absolute path otherwise there is a high probability that your TAs/CPs will fail to execute your code. Points will be deducted if your TAs/CPs fail to execute your code because of not using a correct relative path in your assignments. readme, gitignore and requirements.txt are optional. Thank you for your cooperation. 3. For each programming assignment, please use markdown cells to indicate which question you are solving. Also, use markdown cells to report your answers if the result cannot be explicitly output by your code. Thank you for your cooperation. 4. For each programming assignment, please use the “cell -> run all” function provided by the Jupyter Notebook to sequentially testing all code is working correctly. Otherwise, you may lose some points because there may be some unseen exceptions when TAs executing your code. For example, you declare a variable in a very beginning cell. Then you use that variable in the following cells. A few hours later, you think that this variable is no longer useful and you delete it. However, this variable has already been in memory. Thus, the autocomplete mechanism may push you to use that variable again and again unless you restart your notebook and finally find that variable is deprecated. 5. Please use the local Jupyter Notebook for finishing your assignment. In the previous semester, some students used the Google Colab for finishing assignments and then copied the code for the Google Colab notebook to a local Jupyter Notebook file and submitted it without testing. In this case, some unexpected exceptions may arise and the TAs have to take out some points from your assignments. 6. Please include your Name, Github Username and USC ID in the first cell of the Jupyter Notebook file for each assignment. Name your jupyter file as Lastname_Firstname_HW(i).ipynb, for example, my HW0 should look like Nandi_Soumyaroop_HW0.ipynb- Additional Instructions: A few suggestions for a cleaner submission: The below points are suggestions and good practices and not rules. 1. Try to organize all imports together (preferably in the first cell)This can help in understanding all the dependencies required to run your notebook. This might also help avoid problems that arise when cells run out of order during development. 2. References and CitationsTry to maintain a list of links/documents that you referred to while researching any algorithm at the bottom of your notebook in a markdown cell so as to support any decisions/techniques used to solve the problems in the assignments. This is also good practice so that you have a collection of links/documents that you referred for a specific problem and might save time when required in the future. 3. Plots and figures try to label (and add index) your plots wherever possible to convey information quickly and in a concise manner. Sometimes combining a few plots (eg. using subplots in matplotlib) can make your submission drastically more presentable and will help you in learning data visualization techniques using python (which is a very useful skill) Note: Once you upload your homework, you don't need to follow up with the TAs, checking if your homework was submitted. There will be a timestamp of your submission in Github and as long as it is within the submission deadline, you don't need to worry.Always submit a copy of your .ipynb file where the code has been executed in each cell. Please comment below if there are any questions.
+post17-comment1: Do we need to convert our hw repo from private to public?
+post17-comment1-reply1: no, that would cause other students to see your own
+post17-comment1-reply2: Do we need to create a new branch or just add a new ipynb file to the main branch?
+post17-comment1-reply3: @40 ALWAYS submit in main branch. Ideally you should be practicing good git with proper version control, which means working in a dev branch and then merging into main.
+post17-comment1-reply4: OK, thanks a lot. I am a little confused because of the hw rules. As the picture showed below, it seems that the hw's ipynb file is under branch "notebook" which is a branch of main. 
+post17-comment1-reply5: The picture shown is your folder structure, it is not related to git
+post17-comment1-reply6: Make sense! I think it is only related to my local space right and have nothing to do with Homework Submission on github, right?
+post17-comment1-reply7: You final submission and your local space should both have this same file structure
+post17-comment1-reply8: Sorry, I want to make sure that is this structure like this is OK? Or I need to construct a data / notebook folder？ 
+post17-comment1-reply9: I see, yes you should have data/notebook folder
+post17-comment1-reply10: OK, got it, thanks.
+post17-comment1-reply11: Like this? 
+post17-comment1-reply12: yes thats good
+post17-comment1-reply13: I have the same folder structure as the one shown above, but when reading the data file, I think the correct path is '../data/vertebral_column_data/column_2C.dat' instead of '…/data/vertebral_column_data/column_2C.dat' ? (not sure but just want to confirm) Thanks!
+post17-comment1-reply14: You are right. Having "../" (with 2 periods, not 3) means to go up one directory. Your notebook would not run if the relative path is incorrect. You can also clone your repo into a new directory if you are worried that your relative paths do not work.
+post17-comment1-reply15: you cant have ... anyway, refer to @84
+post17-comment2: Do we lose all the possible points for a homework if the relative path is wrong? (I am just realizing that I forgot to update my path variable in the notebook after creating the "data" folder above the "vertebral_column_data" folder in the repository. I am aware that it was my responsibility to update variables, I am just wondering if I should expect to get 0 points.)
+post17-comment2-reply1: If a student does not follow the submission instruction on the Piazza post @40, a deduction of 10% will be given for HW1, and will receive 0 from HW2 onwards if they do not follow the submission instruction. 
+
+post18: Hi Class, The location of the 3:30-5:20 section of DSCI 552 has permanently moved to THH 201. Regards, M R Rajati
+post18-comment1: I'm in THH201 and class was supposed to start 20 minutes ago Is class still happening?
+post18-comment1-reply1: The class did happen, idk if you went to the wrong classroom, but THH is located near the leavey libaray and right next to trousdale
+
+post19: https://www.dropbox.com/scl/fo/z7ybcaxtorjgyirn4p0r6/h?rlkey=jrw2r05ltirdnkotyuj92bj8m&dl=0 
+
+post20: https://www.dropbox.com/scl/fo/28233d8epazdzkr49v6wj/h?rlkey=adwos8nlc07dgw9xb8pqwv05h&dl=0 
+
+post21: https://www.dropbox.com/scl/fo/8bl7razrri7l8pgyebdcn/h?rlkey=6pd1f4sj67l0ummlun8jyxenp&dl=0 
+post21-comment1: Hi, Where can I find the deadlines for homework?
+post21-comment1-reply1: Hi! You can find them in the syllabus!
+post21-comment1-reply2:  Please watch the first lecture carefully. Thanks. M R Rajati’s phone 
+
+post22: https://www.dropbox.com/scl/fo/8jugp9yufrs8xcwbvkhuj/h?rlkey=1yale6qyxscurgerfskqtuzrx&dl=0 
+
+post23: https://www.dropbox.com/scl/fo/bzcdr20it75x35tg65x7p/h?rlkey=6wd4839idy42uujo3vesbrsqi&dl=0 
+
+post24: https://www.dropbox.com/scl/fo/j4otn3s9dncglsnz8rvlv/h?rlkey=m6d6bahon84fzzfyw0y3wxvf3&dl=0 
+
+post25: Hi Class, Due to unforeseen situations including flooding of SGM 123, we must hold the first lecture of DSCI 552 online. As a result, I am cancelling the afternoon class, and I request that students in the 3:30-5:20 section join the 12:00 noon lecture on DEN today or watch its recording. All the lectures of 12-1:50 session will be recorded by DEN and made available to students in both sections. I apologize for any inconvenience that this may cause. Regards, M R Rajati
+
+post26: Message from Dr. Satish Kumar: I will be teaching a special topics course "DSCI-599: Optimization Techniques for Data Science" next semester. The syllabus is here: https://web-app.usc.edu/soc/syllabus/20241/32453.pdf Kindly forward this email to your students who you think may benefit from the course. If they need any help with d-clearance, they can reach out to me directly. 
+post26-comment1: Can we have their email address? Nvm found it from syllabus! 
+post26-comment1-reply1:  tkskwork@gmail.com M R Rajati’s phone 
+
+post27: Hi, Please do not send miscalculation messages. It seems that homework scores were miscalculated and I must update everyone's grade. I will make a post as soon as I am done with this. Sorry about any inconvenience this may cause. Regards, M R Rajati
+
+post28: Hi, the syllabus said Participation in Piazza has up to 5% extra credit and it's granted on a competitive basis at the discretion of the instructor. Can we know how do instructor give us the extra credit?
+post28-comment1-reply1: The top student will be granted extra points (if they need any for an A)
+
+post29: It seems my homework 7 has not yet been graded but homework 8 has.
+post29-comment1-reply1: <strong attention="jzmycefvu826td">@Soumyaroop Nandi</strong> 
+post29-comment2: Updated HW7. I see no submission for HW8
+post29-comment2-reply1: Please let me know what the updated grades are here.
+post29-comment2-reply2: The grader had graded HW7 for this student, but did not update/publish on Den. I published it now. Final Grade: 791.b. ii. (-1) Not performed with standardized attributes1.b. iv. (-1) Smote applied before CV. (-2) Report your conclusions about the classifiers you trained - missing2. (-10) Not performed Monte Carlo Simulation. (-2)You need to show the best k and majority lable triplet for each iteration in Monte Calro Simulation. (-2) You need to calculate the average hamming score for all 50 iterations of Monte Carlo Simulation. (-2) SD and mean missing 3. (-1) Graphs partially correct
+
+post30: I am wondering if the standing will decrease than this which is posted after midterm. B- 39 B 58 B+ 68 A- 80 A 86.8 Thank you.
+post30-comment1-reply2: You will know soon^TM
+
+post31: Hi, Just wanted to ask and get an idea about when can we expect to get the final letter grade? Thanks in advance!
+post31-comment1-reply2: They said it will be on tomorrow 
+post31-comment2-reply2: Soon^TM (a couple more days)
+post31-comment3: Where can we check our final letter grade?
+post31-comment3-reply1: +1
+
+post32: Dear Instructors, I apologize for reaching out so late. I am writing to inquire about the possibility of a reevaluation of my answer to question 4. I know I made some mistakes after the cluster CD, I still show serval steps on cluster distances . I would be grateful if you could consider giving more grade on this part. Thank you for your time and understanding. The best
+post32-comment1: Checking 
+post32-comment1-reply1: @Kirthika Gurumurthy can give you some more details
+post32-comment2: I have updated your marks based on the steps you’ve shown.
+post32-comment2-reply1: Thank you so much! Hope you have a nice holiday!
+
+post33: Has hw8 been graded?
+post33-comment1-reply1: Not yet. The grades should be up in a day or two <div><br /></div>
+post33-comment2: Still have not seen any grade for HW8 recorded - wanted to make sure I didn’t miss anything? 
+post33-comment2-reply1: We are regrading urs, but it should not change your grade since the lowest HW is dropped anyway
+
+post34: I checked my grade for hw8 but found it was 0/100. I checked my github and my work was submitted. I don't know what happened. Can anyone help to give an explanation?
+post34-comment1-reply1: @1073 @1253
+
+post35: Hello, Just found a possible solution to get rid of my consistent val_accuracy issue for the EfficientNetB0 model (keep getting the same val_accuracy of 0.3218/0.6782, or the validation score does not improve as expected). In my load_and_preprocess() function, there’s a line of code like this: # Normalize the image to the [0, 1] range img = img / 255.0 On the websites below, some discussions suggest that there might be a bug or issue with EfficientNet in relation to the normalization process. Reference:https://stackoverflow.com/questions/67260853/why-would-validation-loss-be-exceptionally-high-while-fitting-with-efficientnethttps://github.com/tensorflow/tensorflow/issues/48103 After I removed the above line of code, my EfficientNetB0 worked correctly. I have tested the model with different parameters, and the issue never came out again. Although it is overdue, I hope it can be of help to others facing similar issues.
+
+post36: I have been running the the file and now it's on VGG16. Can I submit the the project a bit late without penalty?
+post36-comment1: They said no so i'd get a file in before 4 anyway 
+post36-comment1-reply1: How about submitting the mid_running file and after finishing running, submit the completed file? 
+post36-comment1-reply2: I'd at least have something and then wait for an instructor to clarify
+post36-comment2-reply2: an instructor has confirmed that there is no extension on the deadline here @1232
+post36-comment3-reply2: just submit whatever you have before the deadline
+
+post37: Do we need to upload the data directory on github ? Could we upload a data.zip instead of data directory on github?
+post37-comment1-reply2: No
+post37-comment2: Hi, hope I didn't misunderstood. Does this means we don't need to upload data on github?Thanks!
+post37-comment2-reply1: i believe other posts have stated this so yes 
+post37-comment2-reply2: No we don’t have to upload data folder.We need to upload our notebook.Uploading checkpoints/.h5 files are appreciated but not required.^according to the piazza posts I have read so far
+post37-comment3-reply2: <a href="/class/1192">@1192</a> <a href="/class/1037">@1037</a> @1198 please read previous posts
+
+post38: Do we need to submit best_model.h5 file?
+post38-comment1-reply2: Best if you can
+post38-comment2: But when I upload it, this error shows up: The push operation includes a file which exceeds GitHub's file size restriction of 100MB. Please remove the file from history and try again.
+post38-comment2-reply1: if you can I did not include it due to these errors 
+
+post39: Replacing the training data with the augmented data I get better precision and accuracy. Which one should I use for training : 1) (Only Augmented Data: better results) or 2) (Augmented + Training data) ?
+post39-comment1: whole point is to augment data so that we get more training examples so Ig 2? But just use whatever works cuz my sht just crashes when I use augmented data and I still don't know why 
+post39-comment1-reply1: tough
+post39-comment1-reply2: tell me about it 
+post39-comment2-reply2: No free lunch, whatever works
+
+post40: Since we are not uploading the data, should we use the relative path still for our data folder? Or is there a name for the folder we should use that will work for the person running the code? I am using a relative path but I am thinking since I might have named my folder something different that whoever is grading. Thank you!
+post40-comment1-reply2: <a href="https://piazza.com/class/lll6cacyxjfg3?cid=1151">@1151</a> <a href="/class/1017_f14"></a><a href="https://piazza.com/class/lll6cacyxjfg3?cid=1017">@1017</a>_f14 Don&#39;t worry about the folder name
+
+post41: github is saying I cant upload due to a lock file? I looked it up online and it says there should be a file I can delete but I dont see it. does anyone else have this issue?
+post41-comment1-reply2: <md>I think I have run into that problem before, it's a hidden file that you'll have to take care of. I believe following this solved it: https://stackoverflow.com/questions/9282632/git-index-lock-file-exists-when-i-try-to-commit-but-i-cannot-delete-the-file</md>
+post41-comment2-reply2: usually its bc u have a file open somewhere so its locked, just close all files or restart
+
+post42: Hi all, Can we extend the final project ddl for 2 hours, I spend almost 24 hours running the VGG16 model for one time, and I had run it for 3 times, in order to make it converge. But I still need 6 hours to finish the final round. Thank you!
+post42-comment1-reply2: <div> <div> <div> <div> <div> <div> <div> <div> <div> <div> <div> <div> <p>You can refer @1177 to relatively speed up execution time and test your models.</p> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div>
+post42-comment1-reply2: <div> <div> <div> <div> <div> <div> <div> <div> <div> <div> <div> <div> <p>You can also refer @1177 to relatively speed up execution time and test your models.</p> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div>
+post42-comment2: Hi, I have used maxpooling, I think the main reason should be the huge amount of data, I have about one hundred thousand pics and I set the 20 epochs for the last model, and I am using cpu to train the model. Of course I have tried to use colab pro to train it, but it reported an error I didn't solve it, so I run it locally. 
+post42-comment3-reply2: There is no extension, thats why you start early
+
+post43: can we just push the project code to GitHub like we have done with the homework? or we upload to den
+post43-comment1-reply2: We have been using git this entire semester, please use git
+
+post44: Can we submit two separate notebooks one for CNN+MLP and one for Transfer Learning?
+post44-comment1-reply2: Yes
+post44-comment2-reply2: <a href="/class/lll6cacyxjfg3/post/1147">@1147</a> <a href="/class/lll6cacyxjfg3/post/1175">@1175</a> @1189
+
+post45: is transfer learning supposed to be 3 models and therefore three plots? or are we combining the pretrained models and therefore should have one plot?
+post45-comment1-reply2: 3 separate models, 3 separate plots 
+
+post46: Hi, just wanted to know, are the hw-8 grades released yet?
+post46-comment1-reply2: They said most likely the 12th
+
+post47: We have published the final grades for midterm 2. Let us know if anyone has any problems before 13th December.
+post47-comment1: Can we get a split for the marks distribution for each question? How many marks each sub-question is worth?
+post47-comment1-reply1: @12 already up since last night
+post47-comment2: Just curious but will there be solutions provided?
+post47-comment2-reply1: @12 already up since last night
+
+post48:  Above is a snippet of the original data-loading code in the project repository; if you look at the second line, 'tf_data_train' is passed to create a test dataset; shouldn't it be 'tf_data_test'?
+post48-comment1-reply1: Yes it is a bug you can change it 
+post48-comment2: It was corrected in @1025.
+
+post49: Hi, I just want to confirm this what repository looks like after I submitted the final notebook.(the notebook folder has the notebook I finished for the final project.Thanks)
+post49-comment1-reply1: The notebooks are supposed to be all in the notebook folder (hence why its named notebook), but not gonna ask you to fix it because rerunning would take too long
+
+post50: I'm getting the exact same precision, recall, and f1 scores for both transfer learning and the base model, which tells me that transfer learning isn't doing anything, but I'm not sure why. Here's the definition of the pre-trained model efficient_model = tfk.applications.efficientnet.EfficientNetB0( weights="imagenet", input_shape=(299, 299, 3), include_top=False) efficient_model.trainable = False And what's supposed to be the transfer learning model: model = tf.keras.Sequential( [ efficient_model, #tfk.layers.GlobalAveragePooling2D(), tf.keras.layers.Conv2D(32, (3,3), padding='same', activation="relu"), tf.keras.layers.MaxPooling2D((2, 2), strides=2), tf.keras.layers.Conv2D(64, (3,3), padding='same', activation="relu"), tf.keras.layers.MaxPooling2D((2, 2), strides=2), tf.keras.layers.Conv2D(128, (3,3), padding='same', activation="relu"), tf.keras.layers.MaxPooling2D((2, 2), strides=2), tf.keras.layers.Flatten(), tf.keras.layers.Dense(256, activation="relu", kernel_regularizer=tfk.regularizers.L2()), tf.keras.layers.BatchNormalization(), tf.keras.layers.Dropout(0.3), tf.keras.layers.Dense(1, activation="softmax") ] ) This is identical to the base model, save for the first layer being "efficient_model"
+post50-comment1-reply1: <p>You aren&#39;t supposed to have the CNNs in the transfer learning models! You&#39;re taking the features from the pretrained models and transforming them into your own features using your own CNN layers, which is why you&#39;re getting similar results! your model should look like </p> <p></p> <p>```</p> <p>efficient_model </p> <p>Flatten()</p> <p>...the rest of what you have...</p> <p>```</p>
+post50-comment2: Not sure I fully understand. So, we're supposed to pass our images through the pre-trained models, flatten the outputs, then pass those outputs through data augmentation and the separate CNN model we used previously?
+post50-comment2-reply1: No, first augment the data, then pass them through pretrained models, flatten the outputs and pass it through your MLP layer (I think most people are using 1 hidden layer and an output layer). The CNN layers convert your image into features. The pretrained models do the same, so you're _replacing_ the CNN layer with the pretrained models and keeping everything else the same (or similar, I believe you can tune hyperparameters). 
+post50-comment2-reply2: Got it. Thanks for the clarification!
+
+post51: the training set shape is 299,299,3 but my augmented training set is 32, 299, 299, 3 Is there a way to combine them to use for the 3-layer cnn? or do I just use the initial training set thank you!
+post51-comment1-reply2: You can unbatch the augmented set, concatenate the two and then if required again batch the new dataset using .batch(32) method.
+post51-comment1-reply2: You can use the .batch(32) method on the training set to get that shape. It creates batches of 32 of the training set
+post51-comment2: this will reduce my augmented set from 32,299,299,3 to 299, 299, 3? thanks!
+post51-comment2-reply1: yes
+post51-comment2-reply2: Yes that’s correct. 
+
+post52: 
+post52-comment1-reply2: Prob around the 16th
+
+post53: I have generated the classification report on tf_dataset_train instead of tf_augmented_train. Will I have to rerun it and generate it on tf_augmented_train? Or is this fine?
+post53-comment1-reply2: I think it should be fine, especially because the classification report should be on unaugmented data for validation and test sets 
+
+post54: Can anyone specify on what factors our project will be graded on?
+post54-comment1-reply2: <md>@1108</md>
+
+post55: 
+post55-comment1-reply2: Soon^TM
+post55-comment2-reply2: Will it be released today?
+
+post56: Well, the title says it all. Any guidance can help me prepare as my weight files are above 450MB. Thanks!
+post56-comment1-reply2: No
+
+post57: I'm already using Colab Pro with GPU acceleration and its still crashing? My System RAM maxes out i believe I've already reduced the amount of augmented data Im adding but it still just crashes out Any suggestions? I believe it has to do something with my augmented data as it runs fine when just using the raw train data 
+post57-comment1: Would it be ok to first just run everything without the augmentation to get some outputs and just turn in what I can with the augmentations before the deadline? 
+post57-comment1-reply1: always welcome to. you will just lose some points 
+
+post58: Hi, if I used Colab for training, do I need to change paths back to "./data" or "./train_source_images.txt"？Also, do we need to upload data folder? 
+post58-comment1: I believe data folder is not needed the paths I think they said they'll be lenient on 
+post58-comment1-reply1: Got it. So we best leave paths as they are and don't upload the data folder?
+post58-comment1-reply2: Some posts have said to change some haven't I saw this so I think that would be fine? @1151
+post58-comment2-reply2: <md>@1151 @1017_f7 @1192 @1037</md>
+post58-comment2-reply2: <md>@1151 @1017_f7</md>
+
+post59: I am facing an issue where the model consistently predicts the same class for everything for all 3 models, showing no signs of learning, as the accuracy remains constant. I've checked all the posts but haven't found a solution. It would be great if anyone who has resolved this issue could offer some advice.
+post59-comment1-reply2: Whats your dense and output layer parameters?
+post59-comment2: I used Dense(300, activation='relu', kernel_regularizer=l2(0.0001)), Dropout(0.3), Dense(2, activation='softmax') # Assuming binary classification 
+post59-comment3: Seems ok probably check the data pre processing code error shld be there. And check if you have downloaded the updated dataset data.zip shld be 2.6gb
+
+post60: Do we need to upload data to the github repository for the final project? The size is very large, and it's taking a while, so I wanted to make sure. Thanks!
+post60-comment1-reply2: no,I think
+post60-comment2: @1017 no need
+post60-comment3-reply2: <a href="/class/1037">@1192 @1037</a> please read previous posts
+post60-comment3-reply2: <a href="/class/1037">@1092 @1037</a> please read previous posts
+post60-comment3-reply2: <a href="/class/1037">@1137 @1037</a> please read previous posts
+
+post61: I'm getting the following error because of which the precision, recall and F-1 score are coming out to be zeroUndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior. _warn_prf(average, modifier, msg_start, len(result))Does anyone know how to resolve this?
+post61-comment1-reply2: <md>@1101</md>
+
+post62: Hi, Are we supposed to give Precision, Recall, and accuracy for all the train, test, and val datasets ?
+post62-comment1-reply2: d.v? yeah
+
+post63: For my VGG16 model, the ETA for epoch 1 is saying 19 hours. Any tips for solving this? I have had about one and a half hours per epoch for all the other ones. Also, when we submit, if we are not submitting with the data, should we still keep the relative path to the folder where we have the data and assume that if it will be run for grading, the person running it will update it to the correct path on their computer?
+post63-comment1-reply2: <p>You can use collab pro with GPU accleration</p> <p><a href="/class/1151">@1151</a> <a href="/class/1017_f14">@1017_f14</a></p>
+
+post64: WARNING:root:data: Did not find designated split in train/validate/test list. WARNING:root:__MACOSX: Did not find designated split in train/validate/test list. I'm getting this error when running the load_and_preprocess method. Any ideas on how to fix this?
+post64-comment1-reply2: I am also getting this error. Has anyone solved this?
+post64-comment2: maybe we can discuss together and figure it out?
+post64-comment2-reply1: sure I dont mind we can do that. @y3gh18 - instagram. could you reach out to me on there
+
+post65: I am getting this error when predicting labels of the test dataset using any of the transfer learning models: ValueError: can only convert an array of size 1 to a Python scalar Is someone facing the same issue?
+
+post66: Hello! Do we have to push the data to GitHub while making a submission? Also, the file structure for the final project remains the same as for homework? Please confirmThanks!
+post66-comment1-reply1: So far I have seen that we do not need to push the data and that it&#39;s alright to maintain two jupyter notebooks for each part. I personally uploaded Verma_Shiva_Part(c).ipynb and Verma_Shiva_Part(d).ipynb 
+post66-comment2-reply1: @1037 please read previous posts
+
+post67: Hello instructors, For EfficientNetB0, I’m getting the same val_accuracy per epoch. I’ve checked my layers, fine tuned parameters for a long time, but it still results to the same accuracy constantly. However, if I change my dropout rate by 10%, everything works fine. Can I use a dropout rate other than 30% in this model ? I cannot find any solution apart from this.
+post67-comment1-reply1: Following the instructions would be preferred, but If you are at a major roadblock and doing something different would help you progress through it you should always do so
+
+post68: I am getting following plot while running the efficient net model. Obviously something is wrong here, if someone is facing similar issues then please let me know 
+post68-comment1: Many students are having the same problem where the model keeps predicting the same class for everything and doesn’t learn anything. I don’t think a solution has been found / posted yet! 
+post68-comment2-reply1: Same here. I&#39;m getting zero improvement and it&#39;s taking too long for one epoch. 🥲
+post68-comment2-reply1: Same
+post68-comment3: Same problem here!
+
+post69: Are we allowed to submit two separate notebooks? My colab environment always automatically disconnect due to excessive runtime. So I completed CNN+MLP model in one notebook, and transfer learning part in another. 
+post69-comment1-reply1: <p>I believe it was mentioned that we can </p> <p></p> <p></p>
+post69-comment2: https://piazza.com/class/lll6cacyxjfg3/post/1147
+post69-comment3-reply1: @1147 @1175
+
+post70: is 1.d.i actually asking us to do anything or just giving context? 
+post70-comment1: Just letting us know how to do it i think 
+post70-comment1-reply1: thanks!
+post70-comment1-reply2: same with 1.d.iii ?
+post70-comment1-reply3: I would say thats what your "last" layer would be to "add onto" the pre-existing models
+post70-comment1-reply4: and use the outputs of thepenultimate layer in the original pre-trained model as the features extractedfrom each image. in 1.d.iii - when it says original pre-trained model, is that talking about the cnn model we made?
+post70-comment2-reply4: The first part is giving context, but &#34;For these pre-trained networks, you will only train the last fully connected layer, and will freeze all layers before them (i.e. we do not change their parameters during training) and use the outputs of the penultimate layer in the original pre-trained model as the features extracted from each image&#34; you should implement
+
+post71: After adding augmentation layers in the CNN + MLP model, the error rate of train dataset decrease gradually while the val error rate change sharply. Is it normal? 
+post71-comment1: Yeah same, I am having kind off consistently decreasing (not significantly) loss but accuracy is spiking in some weird manner. I dont know whats going on! Please if anyone can guide. 
+post71-comment2-reply4: This behavior is dependent on the train-val split used and is normal. There would be a general trend followed by the validation error if you let it run for multiple epochs and smoothen it out, but that is not required for this project.
+post71-comment3-reply4: I believe this happens due to a large learning rate. You can probably decrease the learning rate while doing model.compile(optimizer=Adam(learning_rate=0.002) for e.g. I tested this and got a smoother validation accuracy
+post71-comment3-reply4: I belive this happena due a large learning rate. You can probably decrease the learning rate while doing model.compile(optimizer=Adam(learning_rate=0.002) for e.g. I tested this and got a smoother validation accuracy
+
+post72: The epoch bar is not there anymore when running my model?
+post72-comment1-reply4: <md>You can try specifying the "verbose" parameter since that's what controls printing.</md>
+post72-comment2: i did try that i set it to 1 but all I see is epoch 1 and then nothing 
+post72-comment2-reply1: How many epochs did you specify to run? The default is 1
+post72-comment2-reply2: I specified 100
+post72-comment2-reply3: only thing I can think of is I did change some parameters but I'm not sure why that would cause this issue
+post72-comment2-reply4: well this is weird it works for my transfer learning model maybe ill try remounting to see if that does anything 
+post72-comment2-reply5: I believe that once you see epoch 1, it means 'verbose' should have been set to True. It took me some time to see the training history after it showed Epoch 1. Maybe you can wait for a while, or adjust the parameters to reduce the model complexity and check if it works for a simpler model. Are you using Tensorflow GPU?
+post72-comment2-reply6: could it be im doing my data augmentation incorrectly? As Im running on GPU for colab 
+post72-comment2-reply7: Maybe try to simplify the image augmentation? 
+post72-comment2-reply8: how would I simplify it I feel like what I'm doing is already fairly bare bones
+
+post73: Hi, I tried to train the CNN model, but met the ValueError like this image. Does anyone met similar problem? 
+post73-comment1-reply8: It’s happening because your model doesn’t recognise the shape of your inputs. Try to explicitly set the input shape inside your model to something like (299,299,3) for example and see how it goes. 
+post73-comment2: Check this one! It helps @1027
+
+post74: Why is the precision and recall coming 0.0 and 0.0 for background class? Is there any way to improve it? I have following layers in my model A pre-trained convolutional base (EfficientNetB0) for feature extraction.Global Average Pooling layer to reduce spatial dimensions.A dense layer with 512 neurons and ReLU activation.Batch Normalization layer for normalization.Dropout layer for regularization.Output dense layer with softmax activation for multi-class classification. 
+post74-comment1-reply8: It’s probably because your model is recognising only one class as a label to classify your images. Did you use categorical_crossentropy by chance? If so, change it to sparse_categorical_crossentropy.
+post74-comment2: I used sparse_categorical_crossentropy and I still got the same results...Any other suggestions or are these normal results?
+
+post75: I have been trying to get good accuracy with keras but have not been unable to do so, hence I used Pytorch and it worked much better, can I submit both files ?
+post75-comment1-reply8: <p>I guess you can try to improve your model with Keras, because TA mentioned that the grading will be based on the Keras. @1017_f9</p> <p></p>
+post75-comment2: I have been trying to do the same but in case it does not work out, should i just upload Torch or both ?
+post75-comment2-reply1: I have the same situation with you, I just uploaded the Torch part. which is successful. 
+
+post76: I completed the whole project in google colab. For the final submission, is it ok to download the code and upload to github? The code contains specific lines to mount the drive, which jupyter notebook does not need. Should I be commenting out the mount/unzip code for the final submission? My code also doesnt contain anything specific to jupyter notebook because I did the whole project in colab. can I just submit my colab notebook as is? Thanks ! 
+post76-comment1-reply1: I think it should be okay to submit the colab notebook. I believe the grading will be mainly based on the code where we train the model and report the result.
+post76-comment2: can a TA confirm? Thanks ! 
+post76-comment3-reply1: @1153
+
+post77:  Hi, I printed out the Precision, Recall, and F1 score for VGG16 model. But the result was confusing. I wonder if anyone got the same result as me? Or what should I do to adjust the code for correct model training? 
+
+post78: I think we need a flatten layer between CNN and the dense layer. Do we need it between the pre-trained model and the final layer? Thanks.
+post78-comment1-reply1: For me, I did not use flatten layer. Instead, I used GlobalAveragePooling2D(), which takes the place of Flatten() by converting the 3D output of the last convolutional layer to a 1D tensor.
+post78-comment2: Thank you. I also tried ResNet50 without flatten layer or the layer you mentioned will result in error. (Though there was no error with EfficientNetB0). 
+
+post79: Hi, I have two questions regarding the project instructions: 1) When it says "Keep the network parameters that have the lowest validation error", does it mean save the model that has the lowest validation error? 2) "Report Precision, Recall, and F1 score for your model". Is this for the model that has the lowest validation error? Thank you.
+post79-comment1-reply1: 1. From my understanding, you need to save all 4 models while making sure each model has low validation error (you can do that using checkpoints)<div>2. I think this applies to all models </div>
+post79-comment2-reply1: yes and yes
+
+post80: Can I use input_shape=(100, 100, 3) instead of (299, 299, 3)? The latter is causing significant delays, and I'm exploring a faster alternative.
+post80-comment1-reply1: I don’t think it’s a good idea to further reduce image size as it is already a bit small and each image contains very little data. Someone please correct me if I’m wrong here. 
+post80-comment2: There are other tricks to reducing the number of parameters that are more typical of CNNs, like max pooling layers. Using those should reduce your runtime if used appropriately.
+post80-comment2-reply1: That said, image downsampling is a very easy and effective way to reduce your computational load. And at the end of the day, if your model works, it works. Who's to say the model trained on 10000x10000 images is better than the one you did with 100x100 if the classification accuracy is only a few points higher, the training time is measured in dog years and you needed some alien-tech GPUs to do it?
+post80-comment3: Could a TA please confirm if it is allowed to use the downsampled shape for training?"
+post80-comment3-reply1: You are allowed to resize if it helps in making computation easier.
+
+post81: Does anyone know how to solve this error in EfficientNetB0. Also can you specify if we are supposed to resize the images to (224,224,3) for this network?This is my network: base_model = EfficientNetB0( weights='imagenet', # Load weights pre-trained on ImageNet. input_shape=(224, 224, 3), include_top=False) # Freeze all layers in the base model for layer in base_model.layers: layer.trainable = False # Create a new model on top of the pre-trained base model model = models.Sequential([ base_model, layers.Dense(128, activation='relu'), layers.BatchNormalization(), layers.Dropout(0.3), layers.Dense(2, activation='softmax') # Assuming a binary classification task ]) # Compile the model model.compile(optimizer=Adam(), loss='sparse_categorical_crossentropy', metrics=['accuracy']) # Display the model summary model.summary() history = model.fit( tf_dataset_train_combined, # Replace with your training dataset validation_data=tf_dataset_val, # Replace with your validation dataset epochs=30, callbacks=[EarlyStopping(monitor='val_accuracy', patience=25, restore_best_weights=True)], batch_size=5 ) 
+post81-comment1-reply1: <p>When in doubt, read documentation:</p> <p><a href="https://keras.io/examples/vision/image_classification_efficientnet_fine_tuning/#:~:text=This%20model%20takes%20input%20images%20of%20shape%20%28224%2C%20224%2C%203%29%2C%20and%20the%20input%20data%20should%20be%20in%20the%20range%20%5B0%2C%20255%5D.%20Normalization%20is%20included%20as%20part%20of%20the%20model." target="_blank" rel="noopener noreferrer">https://keras.io/examples/vision/image_classification_efficientnet_fine_tuning/#:~:text=This%20model%20takes%20input%20images%20of%20shape%20(224%2C%20224%2C%203)%2C%20and%20the%20input%20data%20should%20be%20in%20the%20range%20%5B0%2C%20255%5D.%20Normalization%20is%20included%20as%20part%20of%20the%20model.</a></p>
+post81-comment2-reply1: <p>The EfficientNetB0 does support (299,299,3).</p> <p>However for the ResNet50 and VGG16, you would need to resize your images to [224, 224]</p>
+post81-comment3: We could also use include_top = False and input_shape = (299,299,3) parameters? as an alternate solution to resizing the images to [224,224]?https://www.tensorflow.org/api_docs/python/tf/keras/applications/resnet50/ResNet50#:~:text=for%20the%20model.-,input_shape,-optional%20shape%20tuple
+
+post82: Hi instructors, Is it fine if I make the submission in the following format? 1. notebook 1 - CNN+ MLP model 2. notebook 2 - Transfer Learning - EfficientNet80 model 3. notebook 3 - Transfer Learning - ResNet50 model 4. notebook 4 - Transfer Learning - VGG16 model 5. README.txt - Explaining the contents of each file in the submission Of course, each notebook will have the data preprocessing part This helps me a lot since I have been facing kernel dying issues on Colab 
+post82-comment1-reply1: I believe you should put all the implementation into one notebook since you need to compare all models and its results at the end.
+post82-comment2: We can have different notebooks as confirmed by the instructor: https://piazza.com/class/lll6cacyxjfg3/post/1147
+post82-comment3-reply1: @1147
+post82-comment3-reply1: Thats fine
+post82-comment4: Just confirming, @1147 talks about having two notebooks, one for cnn+mlp and the other for three transfer learning models. The way I’ve done it has one notebook per model , that’s 4 notebooks , with the last notebook having all the comparison details. Can an instructor confirm if this is fine or should I redo all my transfer learning models into a single notebook?Thanks!!
+post82-comment4-reply1: I don't see any reason why this wouldn't be fine! 
+
+post83: I am getting its length as 137 in google colab and when I ran in jupyter notebook it was 928. Any one with any suggestions?
+post83-comment1-reply1: If you are using colab consider doing flush_and_unmount <br /><br />I was also having this issue but after unmounting one time i havent had that problem anymore 
+
+post84: I've tried different combinations of data augmentation and the MLP layer but I'm only ever getting the same accuracy. I know a lot of other students are facing the same problem without any solution. Any tips on how to fix this? 
+post84-comment1: Same issue with the EfficientNetB0 model, but the other models worked fine.
+post84-comment1-reply1: Did you end up fixing it for efficientnetb0? 
+post84-comment2-reply1: @1165
+
+post85: I've seen similar posts, but haven't found a resolution. I've been tuning parameters, but during epoch training for transfer learning the validation accuracy remains the same. Any ideas to get out of this? Thanks.
+post85-comment1: Same issue here, any solution? 
+post85-comment2-reply1: @1165
+
+post86: I just wanna know do we need to add the dataset also in the repo? or just the code file in the repo. Thank you!!
+post86-comment1: just notebook code file
+post86-comment1-reply1: thank you
+post86-comment2-reply1: @1017
+
+post87: The validation loss fluctuates after some epochs, which happens before 20 epochs (as mentioned in the question). So, should I do the early stopping before reaching 20 epochs if training loss and validation loss converge? PS: From previous posts, I observed different answers.
+post87-comment1-reply1: <p>Well the assignments states as least 20 epochs so I assume no </p> <p></p> <p>prob just use start_from_epoch and set it to what they want </p> <p></p> <p>20 for CNN </p> <p></p> <p>and at least 10 during transfer</p> <p></p>
+post87-comment2: 20 for CNN, then expected is 20 epochs; what is the point in using early stopping?
+post87-comment2-reply1: well I think your supposed to set epochs to a larger number and then use early stopping after 20 iterations supposedly the loss may fluctuate a lot before we get to 20?
+post87-comment3: According to @1114, the instructor clearly stated that epochs should be set to minimum requirement, but it is ok if it early stops before the minimum requirement.
+post87-comment4-reply1: @1114
+
+post88: Hi, I have used dataset in data.zip from the dropbox link. After pre-processing, the length of the train, test and val datasets turns out to be the following - Can someone please verify if this is correct? Thanks in advance!
+post88-comment1-reply1: yeah, I also got the same.
+
+post89: How to suppress this warning ? 
+post89-comment1-reply1: <md>If it's in tensor flow, you can suppress warnings with ``` tf.get_logger().setLevel('ERROR') ```</md>
+
+post90: For the transfer learning question, I wanted to confirm the following:- We add custom layers to EfficientNetB0, ResNet50, and VGG16 models, running all 3 on training data and using val data for early stopping beyond 10 epochs. - Based on the training / validation error, we choose the best model and run that on test data- report the training & test metrics of precision, recall, f1
+post90-comment1: For 3. Report the precision, recall, and f1. I guess TA mentioned that we should report for all datasets. @1049
+post90-comment2-reply1: <p>Early stop @1114</p> <p>Yeah train val for choosing transfer method</p> <p>Yeah for everything</p>
+
+post91: If this is taking a long time Is it safe to interrupt the cell and just kill the runtime 
+post91-comment1-reply1: someone said previously that this took them an hr or so
+
+post92: Similar problem with post @1036 & @ 1125. I tried increasing the learning rate from default 0.001 to 0.01 and 0.1, doesn't help. I also tried decreasing the learning rate to 0.0001, still getting this: Anyone knows what other parameter I should tune that will help? Thank you!
+post92-comment1: Also, could a TA answer if this is acceptable or not? 
+post92-comment1-reply1: I guess not. It means the model isn't learning...
+post92-comment1-reply2: Lol you're right, any luck yet? Nothing for me :( 
+post92-comment1-reply3: I feel I have tried all parameters combinations for EfficientNetB0 but still no improvement
+post92-comment2-reply3: As long as you are using the proper methods, remember no free lunch, nothing is guarateed
+
+post93: Hi, I have finished till (d).v, and was moving towards the comparison part. Just wanted to confirm 2 doubts: 1) We need to present the comparison for the testing dataset metrics that we obtained, right? 2) Also, while capturing the classification report for transfer learning, I realized later that I only printed the classification report, but did not store its results in any variable (which I could've used later for the comparison purpose). So, is it okay if for comparison, I refer to these printed outputs of classification report? Thanks in advance!
+post93-comment1-reply3: <p>1. yeah</p> <p>2. as long as you have the results and clearly say where they are its ok</p>
+
+post94:  I noticed that for the img_list,lablel_list for tf_dataset_set is made from tf_dataset_train. Shouldn't it be from tf_dataset_test?
+post94-comment1-reply3: Yes change it to test. The TA specified in @1025 that it is a typo.
+
+post95: Hi, can someone please confirm what is the length of their train, test and validation datasets after training and augmentation? Thank you!
+post95-comment1-reply3: Train - 442<div>Test - 247</div><div>Val - 250</div>
+post95-comment2-reply3: Since not everyone has the same augmentation there is no answer
+post95-comment3: My pre-augmentation has more data than the student answer?
+post95-comment3-reply1: although it may depend on batch size
+
+post96: I have 2 doubts: 1. I am training my model in colab and my path to the folder containing images is data_path = '/content/data'. So, Do I need to change it later while submitting my file?2. Can I submit 4 different colab notebooks for all 4 models in my project? Since the runtime gets disconnected and all my training is lost.
+post96-comment1: I have mounted my drive and then unzipped the data in the colab instance otherwise the I/O took a lot of time and affected runtime, so during submission do we comment and keep our data extraction code in it? or how do we handle submission in such a case?
+post96-comment2-reply1: @1151 @1017_f14
+post96-comment3: So, its okay to submit multiple colab notebooks right? 
+post96-comment3-reply1: It is okay. But make sure to properly mention which notebook contains which results so that its easy for your grader to figure out what you have done.
+
+post97: I have been trying to perform hyperparameter tuning for quite sometime now. I have tried a couple of combinations. But my accuracies lie between 60-65% at best. I have read posts where people have got accuracies above 80. Should this be a reason for concern?Any tips/ suggestions that I could try to increase the accuracy is highly appreciated.
+post97-comment1-reply1: <md>I got 93% test accuracy. WIth following parameters, > Agumentation : brightness, contrast, rotate only. (no zoom, no flipping), I believe HIRISE images rarely get different zoom levels and flipped. > optimizer = Adam(learning\_rate=0.00001) ``` model = Sequential([ # 1 Conv2D(32, (3, 3), padding='same', input_shape=(299, 299, 3), kernel_regularizer=l2(0.1)), BatchNormalization(), ReLU(), MaxPooling2D(pool_size=(2, 2)), # 2 Conv2D(64, (3, 3), padding='same', kernel_regularizer=l2(0.1)), BatchNormalization(), ReLU(), MaxPooling2D(pool_size=(2, 2)), # 3 Conv2D(128, (3, 3), padding='same', kernel_regularizer=l2(0.1)), BatchNormalization(), ReLU(), MaxPooling2D(pool_size=(2, 2)), Flatten(), Dense(128, activation='relu', kernel_regularizer=l2(0.1)), Dropout(0.3), Dense(2, activation='softmax') # for binary classification with softmax ]) ``` Ran 20 epochs, it didn't stopped for patience set to 7.</md>
+post97-comment1-reply1: <md>I got 93% test accuracy. WIth following parameters, > Agumentation : brightness, contrast, rotate only. (no zoom, no flipping) > optimizer = Adam(learning\_rate=0.00001) ``` model = Sequential([ # 1 Conv2D(32, (3, 3), padding='same', input_shape=(299, 299, 3), kernel_regularizer=l2(0.1)), BatchNormalization(), ReLU(), MaxPooling2D(pool_size=(2, 2)), # 2 Conv2D(64, (3, 3), padding='same', kernel_regularizer=l2(0.1)), BatchNormalization(), ReLU(), MaxPooling2D(pool_size=(2, 2)), # 3 Conv2D(128, (3, 3), padding='same', kernel_regularizer=l2(0.1)), BatchNormalization(), ReLU(), MaxPooling2D(pool_size=(2, 2)), Flatten(), Dense(128, activation='relu', kernel_regularizer=l2(0.1)), Dropout(0.3), Dense(2, activation='softmax') # for binary classification with softmax ]) ``` Ran 20 epochs, it didn't stopped for patience set to 7.</md>
+post97-comment2: Thanks for sharing! What's the percentage of data you treat with augmentation？I think I'm treating with 40%. My kernel numbers are like yours but other hyperparams different. I only got 83% now.
+post97-comment2-reply1: I treated all of the training datas.
+post97-comment2-reply2: Your learning rate is much lower than mine. I'm going to tune that part next. Btw, why did you use regularizers in all CNN layers? Thanks again.
+post97-comment2-reply3: May refer to @1107_f7 Good luck!
+post97-comment2-reply4: could u share how ur generating ur classification report? I am able to achieve high test accuracy while using evaluate function. But i get much lesser scores when i use model.predict .
+post97-comment2-reply5: Same! That happens for me too. 
+post97-comment2-reply6: Hope this helps, ``` def evaluate_model(model, dataset, show_output=True): y_true = [] y_pred = [] for images, labels in dataset: predictions = model.predict(images, verbose=0) # Does not print progress. y_true.extend(labels.numpy()) y_pred.extend(np.argmax(predictions, axis=1)) report = classification_report(y_true, y_pred) return report train_report = evaluate_model(best_model, tf_dataset_train) val_report = evaluate_model(best_model, tf_dataset_val) test_report = evaluate_model(best_model, tf_dataset_test) ```
+post97-comment2-reply7: I'm able to replicate this now. Thanks!
+post97-comment2-reply8: Have you used one-hot encoding for the labels of all the datasets? (train, val, and test)
+post97-comment2-reply9: Thanks for the help, it worked!
+post97-comment2-reply10: I'm having the same problem. The accuracy of the output when the model was training topped out at around 0.9, but when I took the trained model for a report, the accuracy dropped back down to around 0.5, can anyone give any help?
+post97-comment2-reply11: How are you calculating it? I was calculating it myself and had the exact same problem, but with the code above (Thanks @Seungil), my results are very similar (not exactly the same, but +- 10%) as compared to the values during training. 
+
+post98: Sometimes when I am running, my computer says theres and issue and immediately begins restarting. And without saving work. Does anyone know how to not have this happen? I havent been able to figure it out from looking online.
+post98-comment1-reply11: Sounds like your computer is broken or overloaded somewhere, use collab
+
+post99:  Matrix size-incompatible: In[0]: [32,102400], In[1]: [175232,256] [[{{node sequential_6/dense_6/Relu}}]] [Op:__inference_train_function_205539] I am getting this error and I have included Flatten() before dense layers. Anyone could suggest any solution?
+post99-comment1: Maybe something to do with how you augment your data?
+post99-comment1-reply1: Sorry, I didn't include specifics. I got this error after data augmentation. During C(ii), when I was training 3 layer CNN.
+post99-comment1-reply2: hard to tell without the code but from other posts possibly when you crop you need to resize most likely a shape issue -> there is another post that explains what they did to fix it One was with the preprocessing code and another was them direcrtly setting the shape before training
+post99-comment1-reply3: I checked that, the code during preprocessing is giving me black images if I am rescaling img = img / 255.0.
+post99-comment1-reply4: im not sure what your using but I was using OpenCV resize function 
+post99-comment1-reply5: did you figure this out? having same issue
+
+post100: so i've been running on jupyter and keep getting resource errors even on the first epoch of the first time I'm trying to train my model. I've finally decided to try google collab but I'm not getting the same training data set that I got in jupyter even after mounting drive and using the supposed files correctly and can't seem to figure out why my training data from the ORIGINALLY PROVIDED CODE only has 2 images. Does anyone have any tips for using collab/ had a similar issue?
+post100-comment1: I'm also dealing with this issue 
+post100-comment1-reply1: So I think I may have fixed it? But I unflushed and remounted my google drive and then reextracted everything I also decided to do this in a different notebook from my code for the project The data in the drive seems to be correct but now unflushing is taking a long time (1+ hours ) so there is that issue 
+

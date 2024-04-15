@@ -1,12 +1,16 @@
 css = '''
 <style>
 
+#chat-with-ai {
+    position: fixed;
+    top: 5%;
+}
+
 .stTextInput {
     position: fixed;
     bottom: 5%;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 50%;
+    padding-right: 8%;
     z-index: 999;
 }
 
