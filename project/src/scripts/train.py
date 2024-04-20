@@ -121,8 +121,8 @@ def save_image(pdf_path, output_dir):
         img.save(os.path.join(output_dir, f"Page_{page_num + 1}.jpg"))
 
 def main():
-    pdf_path = "../data/Lecture_slides.pdf"
-    output_dir = "../data/img"
+    pdf_path = "data/Lecture_slides.pdf"
+    output_dir = "data/img"
     save_image(pdf_path, output_dir)
     # with open('data/piazza_data.txt', 'r', encoding='utf-8') as file:
     #     raw_text = file.read()
