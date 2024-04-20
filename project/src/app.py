@@ -76,7 +76,7 @@ def main():
 
     with st.spinner("Processing"):
         if st.session_state.conversation is None:
-            st.session_state.conversation  = load_conversation_chain("../data/conversation_chain.pickle")
+            st.session_state.conversation  = load_conversation_chain("data/conversation_chain.pickle")
 
     user_question = st.text_input(label="", placeholder="Ask questions", key="user_question")
     if user_question:
