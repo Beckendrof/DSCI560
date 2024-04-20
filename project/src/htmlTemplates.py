@@ -8,9 +8,10 @@ css = '''
 
 .stTextInput {
     position: fixed;
+    left: 25%;
     bottom: 5%;
     width: 50%;
-    padding-right: 8%;
+    # padding-right: 5%;
     z-index: 999;
 }
 
