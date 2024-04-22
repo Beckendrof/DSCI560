@@ -92,17 +92,17 @@ def get_conversation_chain(vectorstore):
         api_key=os.getenv("OPENAI_API_KEY"),
         model_name="gpt-3.5-turbo-1106"
     )
-    template = """You are a Teaching Assistant having a conversation with a student. The student asks you a question, and you respond with an answer. If you don't know the answer them simply reply with "I do not have enough information to answer that". Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+    # template = """You are a Teaching Assistant having a conversation with a student. The student asks you a question, and you respond with an answer. If you don't know the answer them simply reply with "I do not have enough information to answer that". Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
         
-        Chat History:
-        {chat_history}
-        Follow Up Input: {question}
-        Standalone question:"""
+    #     Chat History:
+    #     {chat_history}
+    #     Follow Up Input: {question}
+    #     Standalone question:"""
     
-    custom_prompt_template = PromptTemplate(
-        input_variables=['chat_history', 'question'],
-        template=template
-    )
+    # custom_prompt_template = PromptTemplate(
+    #     input_variables=['chat_history', 'question'],
+    #     template=template
+    # )
     
     memory = ConversationBufferMemory(llm=llm, memory_key="chat_history", output_key='answer', return_messages=True)
     
@@ -110,8 +110,7 @@ def get_conversation_chain(vectorstore):
         llm=llm,
         retriever=vectorstore.as_retriever(
             search_type="similarity", search_kwargs={"k": 4}),
-        memory=memory,
-        condense_question_prompt=custom_prompt_template,
+        memory=memory
     )
     
     with open("data/conversation_chain.pickle", 'wb') as f:

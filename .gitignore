@@ -22,4 +22,5 @@ lab6/ads_data_html/Quick_Install-Windows.html
 lab6/ads_data_html/Release_Notes.html
 *.env
 /project/db
-project/data/audio_file.wav
+*.wav
+*.pickle

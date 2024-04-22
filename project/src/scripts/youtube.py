@@ -69,7 +69,7 @@ def find_best_timestamp(transcript, query, start, duration, chunk_length=100):
             chunk_midpoint = chunk_start_time + (chunk_length / 2) * total_duration / len(transcript)
             best_timestamp = chunk_midpoint
 
-    return (best_timestamp)
+    return (best_timestamp, score)
 
 def search_videos(query):
     try:
@@ -110,8 +110,8 @@ def extract_timestamp(video_id, query):
                 end = start + duration
                 
                 if query:
-                    best_timestamp = find_best_timestamp(text, query, start, duration)
-                    return best_timestamp
+                    best_timestamp, score = find_best_timestamp(text, query, start, duration)
+                    return best_timestamp, score
         return None
     except:
         print("Subtitles are disabled...")
@@ -147,28 +147,23 @@ def extract_keywords(text, num_keywords=5):
 def get_frame(query):
     if "course" in query.lower() or "professor" in query.lower():
         print("Query contains sensitive words. Skipping...")
-        return None, None
+        return None, None, None
     
     query = query[:300]
-    query = extract_keywords(query)
-    if not query:
-        return None, None
-    
-    query = " ".join(query)
-
     video = search_videos(query)
 
     if video:
         print(video)
         video_id = video.split("v=")[1]
 
-        best_timestamp = extract_timestamp(video_id, query)
+        best_timestamp, score = extract_timestamp(video_id, query)
         if best_timestamp:
             extract_frame_from_youtube(f"https://www.youtube.com/watch?v={video_id}", best_timestamp, f"conversation_images/{query}.jpg")
-            return best_timestamp, video_id
+            print("youtube score:", score)
+            return best_timestamp, video_id, score
         else:
             print("No transcripts available for this video.")
-            return None, None
+            return None, None, None
     else:
         print("No videos found for the given query.")
-        return None, None
+        return None, None, None
