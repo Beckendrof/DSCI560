@@ -1,17 +1,22 @@
 import os
 import fitz
 import spacy
+import streamlit as st
 from PIL import Image
+from PyPDF2 import PdfReader
+from dotenv import load_dotenv
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
 from langchain.text_splitter import CharacterTextSplitter
+from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationalRetrievalChain
-from langchain import OpenAI
+from langchain_community.llms import OpenAI
 import networkx as nx
 import pickle
 
 nlp = spacy.load("en_core_web_sm")
+load_dotenv()
 
 def extract_keywords(text, num_keywords=5):
     doc = nlp(text)
@@ -33,6 +38,16 @@ def extract_keywords(text, num_keywords=5):
     top_keywords = [keyword for keyword, score in sorted(node_scores.items(), key=lambda x: x[1], reverse=True)[:num_keywords]]
     return top_keywords
 
+@st.cache_data(show_spinner=False)
+def get_pdf_text(pdf_docs):
+    text = ""
+    for pdf in pdf_docs:
+        pdf_reader = PdfReader(pdf)
+        for page in pdf_reader.pages:
+            text += page.extract_text()
+    return text
+
+@st.cache_data(show_spinner=False)
 def preprocess_text(text):
     lines = text.split("\n")
     lines = [line.strip() for line in lines]
@@ -42,6 +57,7 @@ def preprocess_text(text):
         return processed_text[:480]
     return processed_text
 
+@st.cache_data(show_spinner=False)
 def preprocess_chunks(chunks):
     preprocessed_chunks = []
     for chunk in chunks:
@@ -51,6 +67,7 @@ def preprocess_chunks(chunks):
             print(f"Warning: Chunk length exceeds 480 characters after preprocessing. Length: {len(preprocessed_chunk)}")
     return preprocessed_chunks
 
+@st.cache_data(show_spinner=False)
 def get_text_chunks(text):
     text_splitter = CharacterTextSplitter(
         separator="\n",
@@ -62,6 +79,7 @@ def get_text_chunks(text):
     chunks = preprocess_chunks(chunks)
     return chunks
 
+@st.cache_data(show_spinner=False)
 def get_vectorstore(text_chunks):
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -71,9 +89,21 @@ def get_vectorstore(text_chunks):
 def get_conversation_chain(vectorstore):
     llm = OpenAI(
         temperature=0,
-        api_key="...",
+        api_key=os.getenv("OPENAI_API_KEY"),
         model_name="gpt-3.5-turbo-1106"
     )
+    template = """You are a Teaching Assistant having a conversation with a student. The student asks you a question, and you respond with an answer. If you don't know the answer them simply reply with "I do not have enough information to answer that". Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+        
+        Chat History:
+        {chat_history}
+        Follow Up Input: {question}
+        Standalone question:"""
+    
+    custom_prompt_template = PromptTemplate(
+        input_variables=['chat_history', 'question'],
+        template=template
+    )
+    
     memory = ConversationBufferMemory(llm=llm, memory_key="chat_history", output_key='answer', return_messages=True)
     
     conversation_chain = ConversationalRetrievalChain.from_llm(
@@ -81,7 +111,9 @@ def get_conversation_chain(vectorstore):
         retriever=vectorstore.as_retriever(
             search_type="similarity", search_kwargs={"k": 4}),
         memory=memory,
+        condense_question_prompt=custom_prompt_template,
     )
+    
     with open("data/conversation_chain.pickle", 'wb') as f:
         pickle.dump(conversation_chain, f)
         print("Conversation chain saved to file:", "data/conversation_chain.pickle")
@@ -121,15 +153,15 @@ def save_image(pdf_path, output_dir):
         img.save(os.path.join(output_dir, f"Page_{page_num + 1}.jpg"))
 
 def main():
-    pdf_path = "data/Lecture_slides.pdf"
-    output_dir = "data/img"
-    save_image(pdf_path, output_dir)
-    # with open('data/piazza_data.txt', 'r', encoding='utf-8') as file:
-    #     raw_text = file.read()
+    # pdf_path = "data/Lecture_slides.pdf"
+    # output_dir = "data/img"
+    # save_image(pdf_path, output_dir)
+    with open('data/piazza_data.txt', 'r', encoding='utf-8') as file:
+        raw_text = file.read()
 
-    # text_chunks = get_text_chunks(raw_text)
-    # vectorstore = get_vectorstore(text_chunks)
-    # get_conversation_chain(vectorstore)
+    text_chunks = get_text_chunks(raw_text)
+    vectorstore = get_vectorstore(text_chunks)
+    get_conversation_chain(vectorstore)
 
 
 if __name__ == '__main__':

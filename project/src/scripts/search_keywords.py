@@ -72,8 +72,8 @@ def search_keywords(question, text_per_page, pdf_name, output_dir):
     return None, None, None
 
 def check_slides(user_question):
-    pdf_path = "../data/Lecture_slides.pdf"
-    output_dir = "../data/img"
+    pdf_path = "data/Lecture_slides.pdf"
+    output_dir = "data/img"
     text_per_page = extract_text_from_pdf(pdf_path)
 
     os.makedirs(output_dir, exist_ok=True)

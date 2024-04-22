@@ -57,7 +57,7 @@ def extract_frame_from_youtube(video_url, start_time, output_path):
 
 def find_best_timestamp(transcript, query, start, duration, chunk_length=100):
     chunks = [transcript[i:i+chunk_length] for i in range(0, len(transcript), chunk_length)]
-    best_score = 0.45
+    best_score = 0.4
     best_timestamp = None
 
     total_duration = duration * len(chunks)  # Total duration of the video in seconds

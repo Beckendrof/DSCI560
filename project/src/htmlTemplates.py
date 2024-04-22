@@ -1,18 +1,21 @@
 css = '''
 <style>
 
-#chat-with-ai {
+iframe {
     position: fixed;
-    top: 5%;
+    left: 95%;
+    bottom: 4.9%;
+    width: 5%;
+    z-index: 1;
+    transform: scale(0.70);
 }
 
-.stTextInput {
-    position: fixed;
-    left: 25%;
-    bottom: 5%;
-    width: 50%;
-    # padding-right: 5%;
-    z-index: 999;
+.cover-glow {
+    width: 100%;
+    height: auto;
+    padding: 3px;
+    position: relative;
+    border-radius: 30px;  /* Rounded corners */
 }
 
 .chat-message {
