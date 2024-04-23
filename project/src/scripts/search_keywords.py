@@ -54,21 +54,41 @@ def search_keywords(question, text_per_page, pdf_name, output_dir):
     # Dictionary to store page scores
     page_scores = {}
     
+    # for page_num, text in enumerate(text_per_page, start=1):
+    #     # Calculate score for the page based on the presence of keywords
+    #     score = SequenceMatcher(None, question.lower(), text.lower()).ratio()
+    #     page_scores[page_num] = score
+    
+    # # Sort pages based on scores in descending order
+    # sorted_pages = sorted(page_scores.items(), key=lambda x: x[1], reverse=True)
+    # print(sorted_pages)
+    # # Return the page with the highest score
+    # if sorted_pages:
+    #     top_page_num, top_score = sorted_pages[0]
+    #     if top_score > 0.4:
+    #         img_path = os.path.join(output_dir, f"Page_{top_page_num}.jpg")
+    #         print("page score:", top_score)
+    #         return top_page_num, pdf_name, img_path, top_score
+    #     print("page score: top_score")
+    # return None, None, None, None
+
+    page_scores = {}
+    
     for page_num, text in enumerate(text_per_page, start=1):
         # Calculate score for the page based on the presence of keywords
-        score = SequenceMatcher(None, question.lower(), text.lower()).ratio()
+        score = sum(keyword.lower() in text.lower() for keyword in keywords)
         page_scores[page_num] = score
     
     # Sort pages based on scores in descending order
     sorted_pages = sorted(page_scores.items(), key=lambda x: x[1], reverse=True)
+    
     # Return the page with the highest score
     if sorted_pages:
         top_page_num, top_score = sorted_pages[0]
-        if top_score > 0.5:
+        if top_score > 1:
             img_path = os.path.join(output_dir, f"Page_{top_page_num}.jpg")
-            print("page score:", top_score)
             return top_page_num, pdf_name, img_path, top_score
-        print("page score: top_score")
+    
     return None, None, None, None
 
 def check_slides(user_question):

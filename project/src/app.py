@@ -61,17 +61,17 @@ def print_chat(i, chat):
             else:
                 st.write(bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
                 if token[0] and chat["timestamps"][i][1] and chat["slides"][i][2]:
-                    if chat["timestamps"][i][2] > chat["slides"][i][3]:
-                        st.image(
-                            f"conversation_images/{token[1]}.jpg",
-                            caption=f"https://www.youtube.com/watch?v={chat['timestamps'][i][1]}&t={int(chat['timestamps'][i][0])}"
-                        )  
-                    if chat["timestamps"][i][2] < chat["slides"][i][3]:
-                        img = Image.open(chat["slides"][i][2])
-                        st.image(
-                            img,
-                            caption=f"Page {chat['slides'][i][0]} of {chat['slides'][i][1]}"
-                        )
+                    # if chat["timestamps"][i][2] > chat["slides"][i][3]:
+                    st.image(
+                        f"conversation_images/{token[1]}.jpg",
+                        caption=f"https://www.youtube.com/watch?v={chat['timestamps'][i][1]}&t={int(chat['timestamps'][i][0])}"
+                    )  
+                    # if chat["timestamps"][i][2] < chat["slides"][i][3]:
+                    img = Image.open(chat["slides"][i][2])
+                    st.image(
+                        img,
+                        caption=f"Page {chat['slides'][i][0]} of {chat['slides'][i][1]}"
+                    )
                 elif token[0] and chat["timestamps"][i][1]:
                     st.image(
                         f"conversation_images/{token[1]}.jpg",
@@ -164,7 +164,6 @@ def main():
         user_question = st.chat_input("Ask questions")
         if user_question:
             handle_userinput(user_question, st.session_state.chats[st.session_state.selected_chat])
-    audio_bytes = None
 
     print_chat(st.session_state.selected_chat, st.session_state.chats[st.session_state.selected_chat])
 
